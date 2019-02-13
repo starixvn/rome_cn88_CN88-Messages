@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "assets/styles/extendMessage.css",
+    "inputFile": "assets/styles/extendMessage.scss"
+  },
+  {
+    "outputFile": "Assets/styles/message/message.css",
+    "inputFile": "Assets/styles/message/message.scss"
+  },
+   {
+    "outputFile": "Assets/styles/popup/index.css",
+    "inputFile": "Assets/styles/popup/index.scss"
+  }  
+]
