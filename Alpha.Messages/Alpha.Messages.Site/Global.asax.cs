@@ -1,23 +1,26 @@
 ﻿namespace Alpha.Messages.Site
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Reflection;
-    using System.Web.Mvc;
-    using System.Web.Routing;
     using App_Start;
     using Auth.Filters;
     using Configurations;
     using Fanex.Data;
     using Fanex.Data.CrossCutting.WrappingException;
     using Fanex.Data.OldConnectionStringProvider;
+    using Fanex.Logging;
     using Fanex.Logging.Extensions.Database;
     using Fanex.Logging.Extensions.Web;
+    using Fanex.Logging.RabbitMQ;
+    using Fanex.Logging.Sentry.RavenClient;
     using Fanex.RemotingRef;
     using Helpers;
     using ONEbook.UM.Filters;
+    using Sentry;
     using Sunplus.Agent.Model.Entities;
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Web.Mvc;
+    using System.Web.Routing;
     using Web;
     using Web.Filters;
     using Web.Helpers;
@@ -48,6 +51,7 @@
                 .Run();
 
             ShareSession.Init();
+            InitLogging();
 
             GlobalFilters.Filters.Add(new CheckUMFilter());
             GlobalFilters.Filters.Add(new CheckBelongingFilter());
@@ -85,6 +89,32 @@
                     ["SubAccountName"] = currentCustomer?.SubUserName,
                     ["AdminName"] = currentCustomer?.AdminName
                 });
+        }
+
+        private void InitLogging()
+        {
+            var logEngines = new List<ILogEngine>
+            {
+                new RabbitMQLogging(ConfigurationManager.AppSettings["Fanex.Logging:RabbitMQConnectionStrings"])
+            };
+
+            var sentryUrl = ConfigurationManager.AppSettings["Fanex.Logging:SentryUrl"];
+            if (!string.IsNullOrWhiteSpace(sentryUrl))
+            {
+                logEngines.Add(new SentryLogging(new SentryEngineOptions
+                {
+                    Dsn = new SharpRaven.Dsn(sentryUrl)
+                }));
+            }
+
+            LogManager
+                    .SetDefaultLogCategory(ConfigurationManager.AppSettings["Fanex.Logging:DefaultCategory"])
+                    .Use(logEngines);
+
+            ExceptionHandler
+                .UseConfig(new LoggingConfiguration()
+                .GetHttpHeaderInfo()
+                .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo));
         }
     }
 }
