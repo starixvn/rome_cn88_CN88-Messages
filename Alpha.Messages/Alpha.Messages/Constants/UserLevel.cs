@@ -9,13 +9,15 @@
             [Member] = "Member",
             [Agent] = "Agent",
             [Master] = "Master",
-            [Super] = "Super"
+            [Super] = "Super",
+            [Headline] = "Headline"
         };
 
         public const int Member = 1;
         public const int Agent = 2;
         public const int Master = 3;
         public const int Super = 4;
+        public const int Headline = 0;
 
         public static bool IsMember(int level) => Member == level;
 
@@ -24,6 +26,8 @@
         public static bool IsMaster(int level) => Master == level;
 
         public static bool IsSuper(int level) => Super == level;
+
+        public static bool IsHeadline(int level) => Headline == level;
 
         public static bool IsNotAgent(int level) => !IsAgent(level);
         
