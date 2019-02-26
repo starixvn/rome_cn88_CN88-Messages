@@ -5,7 +5,7 @@
     @if (Model.MessageType != MessageType.Special)
     {
         <div class="filter">
-            @using (Html.BeginForm("Messages", "MessageHistory", new { messageType = Model.MessageType }, FormMethod.Post, new { id = "report-form" }))
+            @using (Html.BeginForm("Messages", "MessageHistory", new { messageType = Model.MessageType }, FormMethod.Post, new { id = "report-form", @class = "form-inline" }))
             {
                 <div class="form-group">
                     <label class="txt">@Resources.from</label>
@@ -36,7 +36,7 @@
         </div>
     }
 
-    <table class="tblRpt tblRpt-bordered tblRpt-striped tblRpt-hover">
+    <table class="tblRpt tbl-style2">
         <thead>
             <tr>
                 <th class="col-order">#</th>

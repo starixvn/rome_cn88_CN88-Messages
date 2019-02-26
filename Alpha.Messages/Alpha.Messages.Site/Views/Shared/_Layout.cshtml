@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
-    @StaticResources.AssetStyles.Render($"/bundles/site-messages/message-{Model.RoleName}")
+    @StaticResources.AssetStyles.Render($"/bundles/site-messages/default")
     @StaticResources.RenderStyles("~/assets/bundles/default-message")    
     @RenderSection("Styles", required: false)
 </head>
 <body>
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs-style2" role="tablist">
         <li role="presentation" class="@(Model.MessageType == MessageType.Normal ? "active" : string.Empty)">
             <a href="@Url.Action("Index", "MessageHistory", new { messageType = MessageType.Normal })">
                 <span class="hidden-mobile">
