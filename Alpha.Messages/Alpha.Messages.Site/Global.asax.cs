@@ -61,11 +61,6 @@
 
             StaticResources.Init(StaticResources.GetBuildVersion());
 
-            var loggingConfiguration = new LoggingConfiguration()
-                .UseGetDbExceptionInfo(DatabaseInfoGetters.GetDbExceptionInfo);
-
-            ExceptionHandler.UseConfig(loggingConfiguration);
-
             RefDataTypeContainer
                 .ConnectTo(new Uri(AppSettings.RemoteRefURL))
                 .FromApplication("Alpha.Messages.Site");
