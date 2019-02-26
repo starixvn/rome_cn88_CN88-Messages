@@ -251,37 +251,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AppResources\Lang.ja-JP.resx">
-      <LastGenOutput>Lang.ja-JP1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Lang.ko-KR.resx">
-      <LastGenOutput>Lang.ko-KR1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Lang.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Lang.th-TH.resx">
-      <LastGenOutput>Lang.th-TH1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Lang.vi-VN.resx">
-      <LastGenOutput>Lang.vi-VN1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Lang.zh-CN.resx">
+    <EmbeddedResource Include="AppResources\Lang.zh-Hans.resx">
       <LastGenOutput>Lang.zh-CN1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources\Lang.zh-TW.resx">
       <LastGenOutput>Lang.zh-TW1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Resources.ja-JP.resx" />
-    <EmbeddedResource Include="AppResources\Resources.ko-KR.resx" />
     <EmbeddedResource Include="AppResources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppResources\Resources.th-TH.resx" />
-    <EmbeddedResource Include="AppResources\Resources.vi-VN.resx" />
-    <EmbeddedResource Include="AppResources\Resources.zh-CN.resx" />
+    <EmbeddedResource Include="AppResources\Resources.zh-Hans.resx" />
     <EmbeddedResource Include="AppResources\Resources.zh-TW.resx" />
   </ItemGroup>
   <ItemGroup>

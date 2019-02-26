@@ -151,7 +151,7 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Normal.
+        ///   Looks up a localized string similar to General.
         /// </summary>
         public static string normal {
             get {
@@ -160,7 +160,7 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Normal Announcement.
+        ///   Looks up a localized string similar to General Announcement.
         /// </summary>
         public static string normalAnnouncement {
             get {
@@ -214,7 +214,7 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Personal Message.
+        ///   Looks up a localized string similar to Personal Announcement.
         /// </summary>
         public static string personalMessage {
             get {
@@ -223,7 +223,7 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Special.
+        ///   Looks up a localized string similar to Important.
         /// </summary>
         public static string Special {
             get {
@@ -232,7 +232,7 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Special Announcement.
+        ///   Looks up a localized string similar to Important Announcement.
         /// </summary>
         public static string specialAnnouncement {
             get {

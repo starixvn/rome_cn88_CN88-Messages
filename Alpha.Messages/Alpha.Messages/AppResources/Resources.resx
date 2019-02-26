@@ -148,13 +148,13 @@
     <value>View Announcement</value>
   </data>
   <data name="normalAnnouncement" xml:space="preserve">
-    <value>Normal Announcement</value>
+    <value>General Announcement</value>
   </data>
   <data name="specialAnnouncement" xml:space="preserve">
-    <value>Special Announcement</value>
+    <value>Important Announcement</value>
   </data>
   <data name="personalMessage" xml:space="preserve">
-    <value>Personal Message</value>
+    <value>Personal Announcement</value>
   </data>
   <data name="from" xml:space="preserve">
     <value>From</value>
@@ -178,13 +178,13 @@
     <value>System Update</value>
   </data>
   <data name="normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>General</value>
   </data>
   <data name="Personal" xml:space="preserve">
     <value>Personal</value>
   </data>
   <data name="Special" xml:space="preserve">
-    <value>Special</value>
+    <value>Important</value>
   </data>
   <data name="New" xml:space="preserve">
     <value>New</value>
