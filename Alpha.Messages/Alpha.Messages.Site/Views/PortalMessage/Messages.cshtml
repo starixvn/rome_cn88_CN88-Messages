@@ -19,8 +19,8 @@
                          class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
                         <div class="time">
                             <span class="icon icon-plus"></span>
-                            @message.PostTime.ToShortDateWithSlash()
-                            <div class="highlight-date-format">@message.PostTime.ToLongTime()</div>
+                            @message.PostTime.ToShortFormatDate()
+                            <div class="highlight-date-format">@message.PostTime.ToLongTime24h()</div>
                         </div>
                         <div class="content short-content @message.GetStyleMessage">
                             @message.ShortContent
@@ -40,7 +40,7 @@
 
             if (currentPostTime.Date != tempPostTime.Date)
             {
-                <div class="group-date">@currentPostTime.ToShortDateString()</div>
+                <div class="group-date">@currentPostTime.ToShortFormatDate()</div>
                 tempPostTime = currentPostTime;
             }
 
@@ -49,7 +49,7 @@
                      class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
                     <div class="time">
                         <span class="icon icon-plus"></span>
-                        @message.PostTime.ToLongTimeString()
+                        @message.PostTime.ToLongTime24h()
                     </div>
                     <div class="content short-content @message.GetStyleMessage">
                         @message.ShortContent
@@ -62,3 +62,5 @@
         }
     }
 </div>
+
+<span id="view-announcements" class="view-more" data-target="@PortalMessagesViewModel.AnnouncementsPath">@Resources.ViewMore</span>

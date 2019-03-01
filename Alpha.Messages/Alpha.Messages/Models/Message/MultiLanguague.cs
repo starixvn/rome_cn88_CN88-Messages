@@ -1,6 +1,5 @@
 ﻿namespace Alpha.Messages.Models.Message
 {
-    using System;
     using System.Collections.Generic;
     using Alpha.Messages.Constants;
 
@@ -57,7 +56,7 @@
             {
                 return GetContentByKey(Language.ChineseTraditional);
             }
-            
+
             set
             {
                 Contents[Language.ChineseTraditional] = value;
@@ -70,7 +69,7 @@
             {
                 return GetContentByKey(Language.Japanese);
             }
-            
+
             set
             {
                 Contents[Language.Japanese] = value;
@@ -96,7 +95,7 @@
             {
                 return GetContentByKey(Language.Korean);
             }
-            
+
             set
             {
                 Contents[Language.Korean] = value;
@@ -121,6 +120,6 @@
             ? Contents[languageKey]
             : Contents.ContainsKey(Language.English)
             ? Contents[Language.English]
-            : string.Empty;        
+            : string.Empty;
     }
 }

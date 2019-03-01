@@ -22,7 +22,7 @@
         public int CustId { get; }
 
         [SpParam(SqlParamName = "targetId2")]
-        public string ParentSites { get; }        
+        public string ParentSites { get; }
 
         public int TotalMessage { get; }
 

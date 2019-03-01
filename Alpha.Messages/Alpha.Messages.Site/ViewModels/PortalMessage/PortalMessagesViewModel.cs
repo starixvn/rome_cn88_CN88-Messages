@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using Constants;
+    using Web.Helpers;
 
     public class PortalMessagesViewModel
     {
@@ -26,5 +27,8 @@
         public IEnumerable<PortalMessageWrapper> HighlightMessages { get; }
 
         public DateTime LastMessagePostTime { get; }
+
+        public static string AnnouncementsPath
+            => MicroSites.MessageUrl($"~/MessageHistory/Index?messageType={MessageType.Normal}");
     }
 }

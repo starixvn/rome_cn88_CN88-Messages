@@ -139,7 +139,7 @@
     <value>足球的新投注类别将于{0}开始生效</value>
   </data>
   <data name="announcement" xml:space="preserve">
-    <value>通告</value>
+    <value>公告内容</value>
   </data>
   <data name="normalAnnouncement" xml:space="preserve">
     <value>一般公告</value>
@@ -176,5 +176,8 @@
   </data>
   <data name="system" xml:space="preserve">
     <value>系统</value>
+  </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>查看更多</value>
   </data>
 </root>

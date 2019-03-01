@@ -22,13 +22,13 @@
         public byte Level { get; }
 
         public int CustId { get; }
-        
+
         public int TotalMessage { get; }
 
         public bool IsTest { get; }
 
         public string CurrentLang { get; }
 
-        public string ParentSites => MessageConstants.ParentSitesByLevel[Level];        
+        public string ParentSites => MessageConstants.ParentSitesByLevel[Level];
     }
 }

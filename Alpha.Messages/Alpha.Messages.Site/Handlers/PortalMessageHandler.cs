@@ -10,7 +10,7 @@
     public class PortalMessageHandler :
         IRequestHandler<PortalMessageQuery, PortalMessagesViewModel>,
         IRequestHandler<MarkMessageAsReadQuery, bool>
-    {        
+    {
         private readonly PortalMessageService noticeService;
 
         public PortalMessageHandler(PortalMessageService noticeService)
@@ -40,6 +40,5 @@
 
             return isSuccess;
         }
-
     }
 }

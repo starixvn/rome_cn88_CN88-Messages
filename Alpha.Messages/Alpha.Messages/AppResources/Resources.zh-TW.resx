@@ -177,4 +177,7 @@
   <data name="system" xml:space="preserve">
     <value>系統</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>查看更多</value>
+  </data>
 </root>

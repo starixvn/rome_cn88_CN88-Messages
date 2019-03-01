@@ -293,5 +293,14 @@ namespace Alpha.Messages.AppResources {
                 return ResourceManager.GetString("viewAnnouncement", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View More.
+        /// </summary>
+        public static string ViewMore {
+            get {
+                return ResourceManager.GetString("ViewMore", resourceCulture);
+            }
+        }
     }
 }

@@ -195,4 +195,7 @@
   <data name="system" xml:space="preserve">
     <value>System</value>
   </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>View More</value>
+  </data>
 </root>

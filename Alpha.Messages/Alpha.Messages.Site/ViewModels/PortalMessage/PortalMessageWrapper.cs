@@ -2,7 +2,6 @@
 {
     using System;
     using Constants;
-    using Fanex.Age.Utility;
     using Models.Message;
 
     public class PortalMessageWrapper
@@ -60,7 +59,7 @@
             {
                 int length = Math.Min(DefaultMaxContentLength, Content.Length);
 
-                var content = Content.Substring(0, length)+ Ellipsis;
+                var content = Content.Substring(0, length) + Ellipsis;
 
                 return content;
             }
@@ -72,9 +71,9 @@
             .Replace(MessageConstants.ContentFontStartMarkup, string.Empty)
             .Replace(MessageConstants.ContentFontEndMarkup, string.Empty);
 
-        public string GetStyleMessage 
+        public string GetStyleMessage
             => CurrentMessage.GetContentByKey(currentLang).Contains(MessageConstants.ContentFontEndMarkup) ?
-            "text-red" : 
+            "text-red" :
             string.Empty;
     }
 }
