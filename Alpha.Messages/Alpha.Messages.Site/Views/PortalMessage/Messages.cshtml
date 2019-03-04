@@ -11,21 +11,21 @@
     {
         if (Model.HighlightMessages.Any())
         {
-            <div class="group-date">@Resources.highlights</div>
+            <div class="group-highlight">@Resources.highlights</div>
             foreach (var message in Model.HighlightMessages)
             {
-                <div class="msg-contents">
+                <div class="msg-contents highlight">
                     <div id="@message.CurrentMessage.Id"
                          class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
                         <div class="time">
-                            <span class="icon icon-plus"></span>
+                            <span class="icon icon-add"></span>
                             @message.PostTime.ToShortFormatDate()
-                            <div class="highlight-date-format">@message.PostTime.ToLongTime24h()</div>
+                            @message.PostTime.ToLongTime24h()
                         </div>
-                        <div class="content short-content @message.GetStyleMessage">
+                        <div class="msg-content short-content @message.GetStyleMessage">
                             @message.ShortContent
                         </div>
-                        <div class="content full-content @message.GetStyleMessage">
+                        <div class="msg-content full-content @message.GetStyleMessage">
                             @message.Content
                         </div>
                     </div>
@@ -44,17 +44,17 @@
                 tempPostTime = currentPostTime;
             }
 
-            <div class="msg-contents">
+            <div class="msg-contents normal">
                 <div id="@message.CurrentMessage.Id"
                      class="message pointer @message.MessageType @(!message.CurrentMessage.IsRead ? "bold" : string.Empty)">
                     <div class="time">
-                        <span class="icon icon-plus"></span>
+                        <span class="icon icon-add"></span>
                         @message.PostTime.ToLongTime24h()
                     </div>
-                    <div class="content short-content @message.GetStyleMessage">
+                    <div class="msg-content short-content @message.GetStyleMessage">
                         @message.ShortContent
                     </div>
-                    <div class="content full-content @message.GetStyleMessage">
+                    <div class="msg-content full-content @message.GetStyleMessage">
                         @message.Content
                     </div>
                 </div>
@@ -63,4 +63,4 @@
     }
 </div>
 
-<span id="view-announcements" class="view-more" data-target="@PortalMessagesViewModel.AnnouncementsPath">@Resources.ViewMore</span>
+<div id="view-announcements" class="view-more" data-target="@PortalMessagesViewModel.AnnouncementsPath">@Resources.ViewMore</div>
