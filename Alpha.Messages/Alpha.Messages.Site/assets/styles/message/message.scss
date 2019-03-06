@@ -59,15 +59,18 @@ body {
 }
 
 .badge-title {
-    display: inline-block;
     padding: 2px 4px;
     background: #da1625;
     color: #fff;
     border-radius: 2px;
     line-height: 1;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: capitalize;
     font-style: normal;
+    position: absolute;
+    top: 1px;
+    right: 6px;
+
 }
 
 .icon-new-box {
