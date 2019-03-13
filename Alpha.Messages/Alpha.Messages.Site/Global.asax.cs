@@ -1,7 +1,11 @@
 ﻿namespace Alpha.Messages.Site
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Mvc;
+    using System.Web.Routing;
     using App_Start;
-    using Auth.Filters;
+    using CN88.Web.Filters;
     using Configurations;
     using Fanex.Data;
     using Fanex.Data.CrossCutting.WrappingException;
@@ -11,14 +15,11 @@
     using Helpers;
     using ONEbook.UM.Filters;
     using Sunplus.Agent.Model.Entities;
-    using System;
-    using System.Collections.Generic;
-    using System.Web.Mvc;
-    using System.Web.Routing;
     using Web;
     using Web.Filters;
     using Web.Helpers;
     using ClientAppSettings = Client.Configurations.AppSettings;
+    using CN88CheckBelongingFilter = CN88.Web.Filters.CheckBelongingFilter;
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -40,7 +41,7 @@
             DbSettingProviderManager
                 .StartNewSession()
                 .Use(new OldConnectionStringProvider())
-                .UseDefaultDbSettingProvider(resourcePath: AppSettings.StoreProcedurePath, enableWatching: true)
+                .UseDefaultDbSettingProvider(resourcePath: AppSettings.StoreProcedurePath)
                 .Use((settingKey, commandTimeout) => new WrappingExceptionObjectDb(settingKey, commandTimeout))
                 .Run();
 
@@ -48,7 +49,8 @@
             LoggingManager.Init();
 
             GlobalFilters.Filters.Add(new CheckUMFilter());
-            GlobalFilters.Filters.Add(new CheckBelongingFilter());
+            GlobalFilters.Filters.Add(new AfterLoginFlowFilter());
+            GlobalFilters.Filters.Add(new CN88CheckBelongingFilter());
             GlobalFilters.Filters.Add(new NoCacheFilter());
 
             ModelBinders.Binders.DefaultBinder = new QueryEntityModelBinder();

@@ -1,10 +1,10 @@
 ﻿namespace Alpha.Messages.Site.Controllers
 {
     using System.Web.Mvc;
+    using CN88.Web.Controllers;
     using MediatR;
-    using Web;
 
-    public abstract class SiteBaseController : BaseController
+    public abstract class SiteBaseController : CN88BaseController
     {
         protected readonly IMediator mediator;
 

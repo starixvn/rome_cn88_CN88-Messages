@@ -1,19 +1,17 @@
 ﻿namespace Alpha.Messages.Site.Controllers
 {
     using System.Web.Mvc;
-    using Alpha.Web;
     using MediatR;
     using Requests.MarqueeMessage;
     using Sunplus.Agent.Model.Entities;
 
-    public class MarqueeMessageController : BaseController
+    public class MarqueeMessageController : SiteBaseController
     {
-        private readonly IMediator mediator;
         private readonly IUserSession userSession;
 
         public MarqueeMessageController(IMediator mediator, IUserSession userSession)
+            : base(mediator)
         {
-            this.mediator = mediator;
             this.userSession = userSession;
         }
 

@@ -23,7 +23,7 @@
             DbSettingProviderManager
                 .StartNewSession()
                 .Use(new OldConnectionStringProvider())
-                .UseDefaultDbSettingProvider(resourcePath: AppSettings.StoreProcedurePath, enableWatching: true)
+                .UseDefaultDbSettingProvider(resourcePath: AppSettings.StoreProcedurePath)
                 .Use((settingKey, commandTimeout) => new WrappingExceptionObjectDb(settingKey, commandTimeout))
                 .Run();
 

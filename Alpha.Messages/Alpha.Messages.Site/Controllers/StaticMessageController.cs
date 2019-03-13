@@ -1,9 +1,9 @@
 ﻿namespace Alpha.Messages.Site.Controllers
 {
     using System.Web.Mvc;
-    using Web;
+    using CN88.Web.Controllers;
 
-    public class StaticMessageController : BaseController
+    public class StaticMessageController : CN88BaseController
     {
         public ActionResult NewSportType() => View();
 
