@@ -26,11 +26,13 @@
 
         public static string StoreProcedurePath => GetConfigValue("StoredProcedurePath");
 
-        public static string MessageSuper => string.IsNullOrWhiteSpace(GetConfigValue("Message:Super")) ? "3000,3100" : GetConfigValue("Message:Super");
+        public static string MessageHeadline => string.IsNullOrWhiteSpace(GetConfigValue("Message:Headline")) ? "3420" : GetConfigValue("Message:Headline");
 
-        public static string MessageMaster => string.IsNullOrWhiteSpace(GetConfigValue("Message:Master")) ? "3000,3200" : GetConfigValue("Message:Master");
+        public static string MessageSuper => string.IsNullOrWhiteSpace(GetConfigValue("Message:Super")) ? "3120" : GetConfigValue("Message:Super");
 
-        public static string MessageAgent => string.IsNullOrWhiteSpace(GetConfigValue("Message:Agent")) ? "3000,3300" : GetConfigValue("Message:Agent");
+        public static string MessageMaster => string.IsNullOrWhiteSpace(GetConfigValue("Message:Master")) ? "3220" : GetConfigValue("Message:Master");
+
+        public static string MessageAgent => string.IsNullOrWhiteSpace(GetConfigValue("Message:Agent")) ? "3320" : GetConfigValue("Message:Agent");
 
         public static string RemoteRefURL => GetConfigValue("RemoteRefURL");
 

@@ -8,7 +8,7 @@
     {
         public static readonly Dictionary<byte, string> ParentSitesByLevel = new Dictionary<byte, string>
         {
-            [UserLevel.Headline] = AppSettings.MessageSuper,
+            [UserLevel.Headline] = AppSettings.MessageHeadline,
             [UserLevel.Super] = AppSettings.MessageSuper,
             [UserLevel.Master] = AppSettings.MessageMaster,
             [UserLevel.Agent] = AppSettings.MessageAgent
