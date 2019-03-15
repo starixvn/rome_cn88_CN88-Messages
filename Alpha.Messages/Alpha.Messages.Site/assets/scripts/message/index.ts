@@ -8,11 +8,11 @@
     registerEvents = () => {
         var self = this;
         this.$('.nav-tabs > li').on('click', function () {
-            self.$.blockUI();
+            self.$blockUI();
             self.$(this).find('span').val('');
         });
         this.$('.btn-submit').on('click', () => {
-            this.$.blockUI();
+            self.$blockUI();
         });
 
         this.initDateTimePicker('#fromDateContainer');
@@ -26,6 +26,12 @@
         });
     }
 
+    $blockUI = () => {
+        this.$.blockUI({
+            css: { cursor: "pointer" },
+            overlayCSS: { cursor: "pointer" }
+        });
+    }
 }
 
 $(() => {
