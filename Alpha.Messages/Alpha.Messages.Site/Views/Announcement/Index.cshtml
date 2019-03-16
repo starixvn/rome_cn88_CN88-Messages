@@ -74,7 +74,7 @@
                     <td class="col-order">@(message.index + 1)</td>
                     <td>
                         <div class="row-first">
-                            @message.value.ReleasedDate
+                            @message.value.ReleasedDate.ToString("yyyy-MM-dd HH:mm:ss")
                             <span class="messageId">@message.value.Id</span>
                             @if (message.value.IsNewAnnouncement)
                             {

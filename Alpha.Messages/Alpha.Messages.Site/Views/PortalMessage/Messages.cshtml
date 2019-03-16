@@ -1,7 +1,6 @@
 ﻿@using Alpha.Messages.Extensions
 
 @model PortalMessagesViewModel
-
 <div class="message-content">
     @if (!Model.NormalMessages.Any() && !Model.HighlightMessages.Any())
     {
@@ -22,10 +21,10 @@
                             @message.PostTime.ToShortFormatDate()
                         </div>
                         <div class="msg-content short-content @message.GetStyleMessage">
-                            @message.ShortContent
+                            @Html.Raw(message.ShortContent)
                         </div>
                         <div class="msg-content full-content @message.GetStyleMessage">
-                            @message.Content
+                            @Html.Raw(message.Content)
                         </div>
                     </div>
                 </div>
@@ -51,10 +50,10 @@
                         @message.PostTime.ToLongTime24h()
                     </div>
                     <div class="msg-content short-content @message.GetStyleMessage">
-                        @message.ShortContent
+                        @Html.Raw(message.ShortContent)
                     </div>
                     <div class="msg-content full-content @message.GetStyleMessage">
-                        @message.Content
+                        @Html.Raw(message.Content)
                     </div>
                 </div>
             </div>
