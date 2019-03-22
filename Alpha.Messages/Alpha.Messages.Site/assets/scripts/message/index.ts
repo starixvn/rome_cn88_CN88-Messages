@@ -22,7 +22,7 @@
     private initDateTimePicker = (id: string) => {
         this.$(id).datetimepicker({
             allowInputToggle: true,
-            format: 'MM/DD/YYYY'
+            format: 'YYYY-MM-DD'
         });
     }
 

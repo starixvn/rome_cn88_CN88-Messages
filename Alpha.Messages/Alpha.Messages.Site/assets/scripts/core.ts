@@ -9,8 +9,8 @@ class AlphaMessages {
 
     format = {
         monthFormat: "MMMM - yyyy",
-        shortDateWithSlash_DatePicker: "MM/DD/YYYY",
-        shortDateWithSlash_MonthPicker: "MM/dd/yyyy"
+        shortDateWithSlash_DatePicker: "YYYY-MM-DD",
+        shortDateWithSlash_MonthPicker: "yyyy-MM-dd"
     };
 
     sort = {

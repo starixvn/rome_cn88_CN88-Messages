@@ -8,9 +8,9 @@
         {
             <div id="daterange-picker"
                  class="daterange-picker"
-                 data-currentdate="@Model.CurrentDate.ToShortDateWithSlash()"
-                 data-mindate="@Model.MinDate.ToShortDateWithSlash()"
-                 data-maxdate="@Model.MaxDate.ToShortDateWithSlash()">
+                 data-currentdate="@Model.CurrentDate.ToShortFormatDate()"
+                 data-mindate="@Model.MinDate.ToShortFormatDate()"
+                 data-maxdate="@Model.MaxDate.ToShortFormatDate()">
             </div>
 
             <div class="form-group">
@@ -23,7 +23,7 @@
                                readonly="readonly"
                                autocomplete="off"
                                class="ui_nexdatepicker_datetextbox ui_nexdatepicker_fromdate form-control"
-                               value="@Model.FromDate.ToShortDateWithSlash()" />
+                               value="@Model.FromDate.ToShortFormatDate()" />
                         <span class="input-group-addon">
                             <span class="icon-calendar" id="fdate_trigger"></span>
                         </span>
@@ -41,7 +41,7 @@
                                readonly="readonly"
                                autocomplete="off"
                                class="ui_nexdatepicker_datetextbox ui_nexdatepicker_todate form-control"
-                               value="@Model.ToDate.ToShortDateWithSlash()" />
+                               value="@Model.ToDate.ToShortFormatDate()" />
                         <span class="input-group-addon">
                             <span class="icon-calendar" id="tdate_trigger"></span>
                         </span>

@@ -1,4 +1,5 @@
-﻿@model MessagesHistoryViewModel
+﻿@using Alpha.Messages.Extensions
+@model MessagesHistoryViewModel
 
 <div role="tabpanel" class="tab-pane active">
 
@@ -11,7 +12,7 @@
                     <label class="txt">@Resources.from</label>
                     <div class="control date">
                         <div class="input-group date" id="fromDateContainer">
-                            <input class="form-control" id="FromDate" name="FromDate" type="text" value=@Model.FromDate />
+                            <input class="form-control" id="FromDate" name="FromDate" type="text" value=@Model.FromDate.ToShortFormatDate() />
                             <span class="input-group-addon">
                                 <span class="icon-calendar"></span>
                             </span>
@@ -22,7 +23,7 @@
                     <label class="txt">@Resources.to</label>
                     <div class="control date">
                         <div class="input-group date" id="toDateContainer">
-                            <input class="form-control" id="ToDate" name="ToDate" type="text" value=@Model.ToDate />
+                            <input class="form-control" id="ToDate" name="ToDate" type="text" value=@Model.ToDate.ToShortFormatDate() />
                             <span class="input-group-addon">
                                 <span class="icon-calendar"></span>
                             </span>
