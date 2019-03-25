@@ -180,4 +180,16 @@
   <data name="ViewMore" xml:space="preserve">
     <value>查看更多</value>
   </data>
+  <data name="close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="Special" xml:space="preserve">
+    <value>重要</value>
+  </data>
+  <data name="Personal" xml:space="preserve">
+    <value>个人</value>
+  </data>
 </root>

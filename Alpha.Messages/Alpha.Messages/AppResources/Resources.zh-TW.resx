@@ -180,4 +180,7 @@
   <data name="ViewMore" xml:space="preserve">
     <value>查看更多</value>
   </data>
+  <data name="close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
 </root>
