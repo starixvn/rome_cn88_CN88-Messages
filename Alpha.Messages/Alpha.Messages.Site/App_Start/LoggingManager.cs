@@ -5,6 +5,7 @@ using Fanex.Logging.RabbitMQ;
 using Fanex.Logging.Sentry.RavenClient;
 using System.Collections.Generic;
 using System.Configuration;
+using Alpha.Web.Configurations;
 
 namespace Alpha.Messages.Site.App_Start
 {
@@ -23,7 +24,7 @@ namespace Alpha.Messages.Site.App_Start
                 logEngines.Add(new SentryLogging(new SentryEngineOptions
                 {
                     Dsn = new SharpRaven.Dsn(sentryUrl)
-                }));
+                }, $"{AppSettings.AssetAppPath}/bundles/common/raven.min.js"));
             }
 
             LogManager
