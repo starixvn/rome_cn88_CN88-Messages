@@ -183,4 +183,7 @@
   <data name="close" xml:space="preserve">
     <value>關閉</value>
   </data>
+  <data name="message" xml:space="preserve">
+    <value>訊息</value>
+  </data>
 </root>
