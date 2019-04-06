@@ -145,10 +145,10 @@
     <value>一般公告</value>
   </data>
   <data name="specialAnnouncement" xml:space="preserve">
-    <value>特殊公告</value>
+    <value>重要公告</value>
   </data>
   <data name="personalMessage" xml:space="preserve">
-    <value>個人訊息</value>
+    <value>個人公告</value>
   </data>
   <data name="from" xml:space="preserve">
     <value>從</value>
@@ -157,7 +157,7 @@
     <value>到</value>
   </data>
   <data name="submit" xml:space="preserve">
-    <value>提交</value>
+    <value>保存</value>
   </data>
   <data name="highlights" xml:space="preserve">
     <value>重點公告</value>
