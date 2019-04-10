@@ -16,6 +16,10 @@ body {
 
 .filter {
     margin: 8px 0 16px;
+
+    .form-group {
+        display: inline-block;
+    }
 }
 
 .tab-content > .tab-pane {
