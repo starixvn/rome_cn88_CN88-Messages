@@ -78,13 +78,13 @@ body {
         display: none !important;
     } 
 
-@media only screen and (max-device-width : $conent-device-greater1024) {
+/*@media only screen and (max-device-width : $conent-device-greater1024) {
     .filter {
         .input-group.date .form-control {
             @include box-shadow-multiple('0px 1px 3px rgba(0, 0, 0, 0.3)');
         }
     }
-}
+}*/
 
 /* ----------- Mobile ----------- */
 @media only screen and (max-device-width : $conent-device-lower768) {
@@ -123,11 +123,11 @@ body {
     .filter {
         display: block;
 
-        .group-button {
+        /*.group-button {
             .btn-submit {
                 height: 36px;
                 margin-right: 0;
             }
-        }
+        }*/
     }
 }
