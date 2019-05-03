@@ -25,7 +25,7 @@
             announcementService = Substitute.For<AnnouncementService>();
             messageService = Substitute.For<NewMessageService>();
             formatService = Substitute.For<AnnouncementFormatService>();
-            handler = new AnnouncementHandler(announcementService, formatService, messageService);
+            handler = new AnnouncementHandler(announcementService, formatService, messageService, null);
             fixture = new UserSessionFixture();
             fixture.UserSession.RoleId.Returns(RoleId.Agent);
         }
