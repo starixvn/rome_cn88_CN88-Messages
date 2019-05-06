@@ -116,6 +116,10 @@ body {
         display: inline-block !important;
     }
 
+    .tblRpt .row-first {
+        font-size: $font-size-mobile;
+    }
+
     .tab-content > .tab-pane {
         padding: 20px 12px 0;
     }
