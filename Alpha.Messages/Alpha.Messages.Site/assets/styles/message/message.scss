@@ -105,6 +105,7 @@ body {
     body {
         background-color: #fff;
         font-size: $font-size-mobile;
+        padding: 10px 0;
     }
 
     .hidden-mobile {
@@ -113,6 +114,10 @@ body {
 
     .visible-mobile {
         display: inline-block !important;
+    }
+
+    .tab-content > .tab-pane {
+        padding: 20px 12px 0;
     }
 
     .nav-tabs {
@@ -136,6 +141,7 @@ body {
 
     .filter {
         display: block;
+        margin-top: 0;
 
         .form-group {
             margin-right: 0;
@@ -146,8 +152,8 @@ body {
             margin-left: 0;            
         }
 
-        .from-date {
-            width: 49%;
+        .from-date-box {
+            width: 45%;
 
             .txt {
                 display: none;
@@ -159,19 +165,22 @@ body {
         }
 
 
-        .to-date {
-            width: 50%;
+        .to-date-box {
+            width: 54%;
 
             .txt {
-                width: 20px;
+                width: 30px;
                 text-align: center;
+                text-transform: uppercase;
             }
 
             .control {
-                width: calc(100% - 23px);
+                width: calc(100% - 33px);
                 margin-right: 0;
-            }
-        }        
+            }                   
+        } 
+        
+        
         
         .group-button {
             width: 100%;
