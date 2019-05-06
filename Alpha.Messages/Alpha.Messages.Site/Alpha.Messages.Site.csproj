@@ -550,6 +550,7 @@
     <Content Include="Web.AppSettings.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Shared\Tabs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
