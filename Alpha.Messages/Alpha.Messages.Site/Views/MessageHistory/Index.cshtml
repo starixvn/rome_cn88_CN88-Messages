@@ -1,6 +1,8 @@
 ﻿@using Alpha.Messages.Extensions
 @model MessagesHistoryViewModel
 
+@{ Layout = "~/Views/Shared/_LayoutMobile.cshtml"; }
+
 <div role="tabpanel" class="tab-pane active">
 
     @if (Model.MessageType != MessageType.Special)
@@ -9,7 +11,7 @@
             @using (Html.BeginForm("Messages", "MessageHistory", new { messageType = Model.MessageType }, FormMethod.Post, new { id = "report-form", @class = "form-inline" }))
             {
                 <div class="form-group">
-                    <label class="txt">@Resources.from</label>
+                    <label class="txt from-text">@Resources.from</label>
                     <div class="control date">
                         <div class="input-group date" id="fromDateContainer">
                             <input class="form-control" id="FromDate" name="FromDate" type="text" value=@Model.FromDate.ToShortFormatDate() />

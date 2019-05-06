@@ -1,7 +1,7 @@
 ﻿@using Alpha.Messages.Extensions
 
 @model AnnouncementHistoryViewModel
-
+@{ Layout = "~/Views/Shared/_LayoutMobile.cshtml";}
 <div role="tabpanel" class="tab-pane active" id="system">
     <div class="filter">
         @using (Html.BeginForm("Index", "Announcement", FormMethod.Post, new { id = "report-form", @class = "form-inline"}))

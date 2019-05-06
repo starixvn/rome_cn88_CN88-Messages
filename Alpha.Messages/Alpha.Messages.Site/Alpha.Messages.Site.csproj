@@ -440,6 +440,7 @@
     <Content Include="Views\Announcement\Popup.cshtml" />
     <Content Include="Alpha.Messages.Site.Debug.ruleset" />
     <Content Include="assets\styles\popup\index.scss" />
+    <Content Include="Views\Shared\_LayoutMobile.cshtml" />
     <Content Include="Views\StaticMessage\NewSportType.cshtml" />
     <Content Include="Alpha.Messages.Site.Debug.ruleset" />
     <Content Include="Views\StaticMessage\102924.cshtml" />
