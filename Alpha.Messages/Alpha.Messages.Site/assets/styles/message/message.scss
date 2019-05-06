@@ -137,11 +137,50 @@ body {
     .filter {
         display: block;
 
-        /*.group-button {
-            .btn-submit {
-                height: 36px;
+        .form-group {
+            margin-right: 0;
+            vertical-align: middle;
+        }
+
+        .control {
+            margin-left: 0;            
+        }
+
+        .from-date {
+            width: 49%;
+
+            .txt {
+                display: none;
+            }
+
+            .control {
+                width: 100%;
+            }
+        }
+
+
+        .to-date {
+            width: 50%;
+
+            .txt {
+                width: 20px;
+                text-align: center;
+            }
+
+            .control {
+                width: calc(100% - 23px);
                 margin-right: 0;
             }
-        }*/
+        }        
+        
+        .group-button {
+            width: 100%;
+            margin-bottom: 0;
+
+            .btn-submit {           
+                width: 100%;
+                margin-right: 0;          
+            }
+        } 
     }
 }
