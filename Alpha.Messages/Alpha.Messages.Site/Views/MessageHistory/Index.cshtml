@@ -15,9 +15,15 @@
                     <label class="txt">@Resources.from</label>
                     <div class="control date">
                         <div class="input-group date" id="fromDateContainer">
-                            <input class="form-control" id="FromDate" name="FromDate" type="text" value=@Model.FromDate.ToShortFormatDate() />
+                            <input type="text" 
+                                   class="ui_nexdatepicker_datetextbox ui_nexdatepicker_fromdate form-control" 
+                                   id="FromDate" 
+                                   name="FromDate" 
+                                   readonly="readonly" 
+                                   autocomplete="off" 
+                                   value=@Model.FromDate.ToShortFormatDate() />
                             <span class="input-group-addon">
-                                <span class="icon-calendar"></span>
+                                <span class="icon-calendar" id="fdate_trigger"></span>
                             </span>
                         </div>
                     </div>
@@ -26,9 +32,15 @@
                     <label class="txt">@Resources.to</label>
                     <div class="control date">
                         <div class="input-group date" id="toDateContainer">
-                            <input class="form-control" id="ToDate" name="ToDate" type="text" value=@Model.ToDate.ToShortFormatDate() />
+                            <input type="text"
+                                   class="ui_nexdatepicker_datetextbox ui_nexdatepicker_fromdate form-control" 
+                                   id="ToDate" 
+                                   name="ToDate"                                     
+                                   readonly="readonly" 
+                                   autocomplete="off" 
+                                   value=@Model.ToDate.ToShortFormatDate() />
                             <span class="input-group-addon">
-                                <span class="icon-calendar"></span>
+                                <span class="icon-calendar" id="tdate_trigger"></span>
                             </span>
                         </div>
                     </div>
