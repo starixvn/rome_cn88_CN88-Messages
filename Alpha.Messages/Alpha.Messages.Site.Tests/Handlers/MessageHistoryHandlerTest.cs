@@ -14,6 +14,7 @@
     using Ploeh.AutoFixture;
     using Services;
     using Site.Handlers;
+    using Site.Helpers;
     using Site.Requests.MessageHistory;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
@@ -25,6 +26,7 @@
         private NewMessageService newMessageService;
         private AnnouncementService announcementService;
         private MessageHistoryHandler messageHandler;
+        private BrowserHelper browserHelper;
 #pragma warning disable CS0618 // Type or member is obsolete
         private IUserSession userSession;
 #pragma warning restore CS0618 // Type or member is obsolete
@@ -36,7 +38,8 @@
             messageService = Substitute.For<MessageHistoryService>();
             newMessageService = Substitute.For<NewMessageService>();
             announcementService = Substitute.For<AnnouncementService>();
-            messageHandler = new MessageHistoryHandler(messageService, newMessageService, announcementService, null);
+            browserHelper = Substitute.For<BrowserHelper>();
+            messageHandler = new MessageHistoryHandler(messageService, newMessageService, announcementService, browserHelper);
 
 #pragma warning disable CS0618 // Type or member is obsolete
             userSession = Substitute.For<IUserSession>();
@@ -111,7 +114,7 @@
                 query.MessageType,
                 query.RoleId,
                 numberOfUnReadMessage,
-                null);
+                browserHelper);
 
             // Act
             var viewModel = messageHandler.Handle(query);
