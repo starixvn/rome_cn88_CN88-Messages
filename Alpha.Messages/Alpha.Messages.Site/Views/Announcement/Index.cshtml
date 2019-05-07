@@ -1,10 +1,12 @@
 ﻿@using Alpha.Messages.Extensions
 
 @model AnnouncementHistoryViewModel
-@{ Layout = "~/Views/Shared/_LayoutMobile.cshtml";}
+@{
+    Layout = Model.IsDevice ? "~/Views/Shared/_LayoutMobile.cshtml" : "~/Views/Shared/_Layout.cshtml";
+}
 <div role="tabpanel" class="tab-pane active" id="system">
     <div class="filter">
-        @using (Html.BeginForm("Index", "Announcement", FormMethod.Post, new { id = "report-form", @class = "form-inline"}))
+        @using (Html.BeginForm("Index", "Announcement", FormMethod.Post, new { id = "report-form", @class = "form-inline" }))
         {
             <div id="daterange-picker"
                  class="daterange-picker"
@@ -79,7 +81,7 @@
                             @if (message.value.IsNewAnnouncement)
                             {
                                 <span class="badge-title">@Resources.New</span>
-                            }                            
+                            }
                         </div>
                         <div class="message-content">@Html.Raw(message.value.Content)</div>
                     </td>

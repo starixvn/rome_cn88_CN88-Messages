@@ -1,7 +1,8 @@
 ﻿@using Alpha.Messages.Extensions
 @model MessagesHistoryViewModel
-
-@{ Layout = "~/Views/Shared/_LayoutMobile.cshtml"; }
+@{
+    Layout = Model.IsDevice ? "~/Views/Shared/_LayoutMobile.cshtml" : "~/Views/Shared/_Layout.cshtml";
+}
 
 <div role="tabpanel" class="tab-pane active">
 

@@ -36,7 +36,7 @@
             messageService = Substitute.For<MessageHistoryService>();
             newMessageService = Substitute.For<NewMessageService>();
             announcementService = Substitute.For<AnnouncementService>();
-            messageHandler = new MessageHistoryHandler(messageService, newMessageService, announcementService);
+            messageHandler = new MessageHistoryHandler(messageService, newMessageService, announcementService, null);
 
 #pragma warning disable CS0618 // Type or member is obsolete
             userSession = Substitute.For<IUserSession>();
@@ -110,7 +110,8 @@
                 query.EndDate,
                 query.MessageType,
                 query.RoleId,
-                numberOfUnReadMessage);
+                numberOfUnReadMessage,
+                null);
 
             // Act
             var viewModel = messageHandler.Handle(query);

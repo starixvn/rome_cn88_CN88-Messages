@@ -32,6 +32,6 @@
 
         public DateTime CurrentDate => DateTime.Now;
 
-        public bool IsDevices => browserHelper.IsMobile(isOnlyTablet: false);
+        public bool IsDevice => browserHelper.IsMobile(isOnlyTablet: false);
     }
 }
