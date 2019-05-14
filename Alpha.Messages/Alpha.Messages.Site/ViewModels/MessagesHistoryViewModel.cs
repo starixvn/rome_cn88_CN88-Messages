@@ -34,6 +34,6 @@
 
         public bool IsNewMessage(DateTime postTime) => postTime > LastSeenAnnouncement;
 
-        public bool IsDevice => browserHelper.IsMobile();
+        public bool IsDevice => browserHelper.IsMobile() && !browserHelper.IsTablet();
     }
 }
