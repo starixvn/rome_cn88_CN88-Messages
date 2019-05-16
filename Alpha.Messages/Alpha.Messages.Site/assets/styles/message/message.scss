@@ -152,6 +152,7 @@ body {
         .form-group {
             margin-right: 0;
             vertical-align: middle;
+            margin-bottom: 12px; 
         }
 
         .control {
@@ -170,7 +171,6 @@ body {
             }
         }
 
-
         .to-date-box {
             width: 54%;
 
@@ -186,7 +186,9 @@ body {
             }                   
         } 
         
-        
+        .input-group.date {
+            width: 100%;
+        }
         
         .group-button {
             width: 100%;
