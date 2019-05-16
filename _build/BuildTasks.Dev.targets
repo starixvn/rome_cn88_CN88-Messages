@@ -5,11 +5,11 @@
          InitialTargets="MyTargets">
   
   <Target Name="MyTargets">
-	<Exec Command="..\_tools\Nuget\NuGet restore ..\Alpha.Messages.sln"/>
+	<Exec Command="..\_tools\Nuget\NuGet restore ..\Alpha.CN88.Messages.sln"/>
 
 	<MSBuild 
-		Projects="..\Alpha.Messages.sln" 
-		Properties="RunXunitTests=true;RunNunitTests=true;TreatWarningsAsErrors=true" />
+		Projects="..\Alpha.CN88.Messages.sln" 
+		Properties="RunXunitTests=false;RunNunitTests=false;TreatWarningsAsErrors=false" />
   </Target>
   
 </Project>
