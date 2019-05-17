@@ -90,8 +90,8 @@ body {
 }
 
 .visible-mobile {
-        display: none !important;
-    } 
+    display: none !important;
+}
 
 /*@media only screen and (max-device-width : $conent-device-greater1024) {
     .filter {
@@ -102,8 +102,7 @@ body {
 }*/
 
 /* ----------- Mobile ----------- */
-@media (max-device-width: $screen-device-lower768),
-    (min-device-width: $screen-device-greater768) and (max-device-width: $screen-device-lower1024) and (orientation: landscape) {
+@media (max-device-width: $screen-device-lower768), (min-device-width: $screen-device-greater768) and (max-device-width: $screen-device-lower1024) and (orientation: landscape) {
     body {
         background-color: #fff;
         font-size: $font-size-mobile;
@@ -152,11 +151,11 @@ body {
         .form-group {
             margin-right: 0;
             vertical-align: middle;
-            margin-bottom: 12px; 
+            margin-bottom: 12px;
         }
 
         .control {
-            margin-left: 0;            
+            margin-left: 0;
         }
 
         .from-date-box {
@@ -173,6 +172,7 @@ body {
 
         .to-date-box {
             width: 54%;
+            float: right;
 
             .txt {
                 width: 30px;
@@ -183,21 +183,21 @@ body {
             .control {
                 width: calc(100% - 33px);
                 margin-right: 0;
-            }                   
-        } 
-        
+            }
+        }
+
         .input-group.date {
             width: 100%;
         }
-        
+
         .group-button {
             width: 100%;
             margin-bottom: 0;
 
-            .btn-submit {           
+            .btn-submit {
                 width: 100%;
-                margin-right: 0;          
+                margin-right: 0;
             }
-        } 
+        }
     }
 }
