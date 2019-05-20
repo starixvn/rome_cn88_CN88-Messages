@@ -9,7 +9,7 @@
 
 	<MSBuild 
 		Projects="..\Alpha.CN88.Messages.sln" 
-		Properties="RunXunitTests=false;RunNunitTests=false;TreatWarningsAsErrors=false" />
+		Properties="RunXunitTests=true;RunNunitTests=true;TreatWarningsAsErrors=false" />
   </Target>
   
 </Project>
