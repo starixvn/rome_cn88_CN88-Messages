@@ -165,24 +165,29 @@ body {
                 display: none;
             }
 
-            /*.control {
-                width: 100%;
-            }*/
-        }
+            .input-group-addon {
+                width: 35px;
+            }
+        }        
 
         .to-date-box {
             width: 54%;
             float: right;
+            text-align: right;
 
             .txt {
                 width: 30px;
-                text-align: center;
+                text-align: left;
                 text-transform: uppercase;
             }
 
             .control {
-                width: calc(100% - 33px);
+                width: calc(100% - 42px);
                 margin-right: 0;
+            }
+
+            .input-group-addon {
+                width: 35px;
             }
         }
 
