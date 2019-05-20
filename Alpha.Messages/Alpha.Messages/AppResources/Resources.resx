@@ -198,4 +198,16 @@
   <data name="ViewMore" xml:space="preserve">
     <value>View More</value>
   </data>
+  <data name="normalAnnouncement_Mobile" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="specialAnnouncement_Mobile" xml:space="preserve">
+    <value>Important</value>
+  </data>
+  <data name="systemAnnouncement_Mobile" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="personalMessage_Mobile" xml:space="preserve">
+    <value>Personal</value>
+  </data>
 </root>
