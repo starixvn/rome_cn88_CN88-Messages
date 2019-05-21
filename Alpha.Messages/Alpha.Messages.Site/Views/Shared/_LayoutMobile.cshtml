@@ -11,7 +11,7 @@
     @StaticResources.RenderStyles("~/assets/bundles/default-message")
     @RenderSection("Styles", required: false)
 </head>
-<body>
+<body @(Html.Raw(Alpha.Messages.Site.Helpers.BrowserManager.BuildMobileHtmlClass()))>
     <ul class="nav nav-tabs" role="tablist">
         @Html.Partial("Tabs")
     </ul>
