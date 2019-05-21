@@ -101,13 +101,11 @@ body {
     }
 }*/
 
-/* ----------- Mobile ----------- */
-@media (max-device-width: $screen-device-lower768), (min-device-width: $screen-device-greater768) and (max-device-width: $screen-device-lower1024) and (orientation: landscape) {
-    body {
-        background-color: #fff;
-        font-size: $font-size-mobile;
-        padding: 10px 0;
-    }
+// For Phone
+body.phone {
+    background-color: #fff;
+    font-size: $font-size-mobile;
+    padding: 10px 0;
 
     .hidden-mobile {
         display: none !important;
