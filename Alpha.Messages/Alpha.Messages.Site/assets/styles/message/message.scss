@@ -115,8 +115,14 @@ body.phone {
         display: inline-block !important;
     }
 
-    .tblRpt .row-first {
-        font-size: $font-size-mobile;
+    .tblRpt {
+        .row-first {
+            font-size: $font-size-mobile;
+        }
+
+        tbody td {
+            padding: 8px;
+        }
     }
 
     .tab-content > .tab-pane {
@@ -175,7 +181,7 @@ body.phone {
                 padding-left: 8px;
                 padding-right: 8px;
             }
-        }        
+        }
 
         .to-date-box {
             width: 54%;
@@ -202,11 +208,9 @@ body.phone {
                 padding-right: 8px;
             }
         }
-
         /*.input-group.date {
             width: 100%;
         }*/
-
         .group-button {
             width: 100%;
             margin-bottom: 0;
