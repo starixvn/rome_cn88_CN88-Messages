@@ -27,7 +27,8 @@
                 DateTime.Today,
                 MessageType.Normal,
                 RoleId.Agent,
-                numberOfUnreadMessage);
+                numberOfUnreadMessage,
+                null);
 
             // Assert
             Assert.AreEqual(startDate, viewModel.FromDate);
@@ -50,7 +51,8 @@
                 endDate,
                 MessageType.Normal,
                 RoleId.Agent,
-                numberOfUnreadMessage);
+                numberOfUnreadMessage,
+                null);
 
             // Assert
             Assert.AreEqual(endDate, viewModel.ToDate);
@@ -73,7 +75,8 @@
                 DateTime.Today,
                 msgType,
                 RoleId.Agent,
-                numberOfUnreadMessage);
+                numberOfUnreadMessage,
+                null);
 
             // Assert
             Assert.AreEqual(msgType, viewModel.MessageType);
@@ -96,7 +99,8 @@
                 DateTime.Today,
                 messageType,
                 RoleId.Agent,
-                numberOfUnreadMessage);
+                numberOfUnreadMessage,
+                null);
 
             // Assert
             Assert.AreEqual(messageTypeName, viewModel.MessageType);
@@ -119,7 +123,8 @@
                 DateTime.Today,
                 MessageType.Normal,
                 roleId,
-                numberOfUnreadMessage);
+                numberOfUnreadMessage,
+                null);
 
             // Assert
             Assert.AreEqual(userLevelName, viewModel.RoleName);

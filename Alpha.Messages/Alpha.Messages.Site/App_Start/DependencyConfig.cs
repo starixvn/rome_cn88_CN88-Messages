@@ -9,6 +9,7 @@
     using Client;
     using Controllers;
     using Fanex.Data.Repository;
+    using Helpers;
     using MediatR;
     using Models.Announcement;
     using Requests.Announcement;
@@ -73,12 +74,13 @@
 
         private static void RegisterServices(Container container)
         {
+            container.RegisterSingleton<BrowserHelper, BrowserHelperImpl>();
             container.RegisterSingleton<IUserSession, UserSessionExt>();
             container.RegisterPerWebRequest<NewMessageService, NewMessageServiceImpl>();
             container.RegisterPerWebRequest<MessageHistoryService, MessageHistoryServiceImpl>();
             container.RegisterPerWebRequest<MarqueeMessageService, MarqueeMessageServiceImpl>();
             container.RegisterPerWebRequest<PortalMessageService, PortalMessageServiceImpl>();
-            container.RegisterSingleton<AnnouncementFormatService, AnnouncementFormatServiceImpl>();            
+            container.RegisterSingleton<AnnouncementFormatService, AnnouncementFormatServiceImpl>();
             container.RegisterSingleton<AnnouncementService, AnnouncementServiceImpl>();
 
             container.Register<ProductService>(

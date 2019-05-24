@@ -169,6 +169,15 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string normalAnnouncement_Mobile {
+            get {
+                return ResourceManager.GetString("normalAnnouncement_Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your minimum position taking value has been changed by the upline.&lt;br&gt;Please kindly be informed and have a check the details for your downlines..
         /// </summary>
         public static string Notice_1 {
@@ -223,6 +232,15 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Personal.
+        /// </summary>
+        public static string personalMessage_Mobile {
+            get {
+                return ResourceManager.GetString("personalMessage_Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Important.
         /// </summary>
         public static string Special {
@@ -237,6 +255,15 @@ namespace Alpha.Messages.AppResources {
         public static string specialAnnouncement {
             get {
                 return ResourceManager.GetString("specialAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Important.
+        /// </summary>
+        public static string specialAnnouncement_Mobile {
+            get {
+                return ResourceManager.GetString("specialAnnouncement_Mobile", resourceCulture);
             }
         }
         
@@ -264,6 +291,15 @@ namespace Alpha.Messages.AppResources {
         public static string systemAnnouncement {
             get {
                 return ResourceManager.GetString("systemAnnouncement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string systemAnnouncement_Mobile {
+            get {
+                return ResourceManager.GetString("systemAnnouncement_Mobile", resourceCulture);
             }
         }
         

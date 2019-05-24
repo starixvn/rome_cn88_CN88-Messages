@@ -1,6 +1,7 @@
 ﻿namespace Alpha.Messages.Site.Handlers
 {
     using System;
+    using Helpers;
     using MediatR;
     using Models.Message;
     using Params;
@@ -13,19 +14,22 @@
         private readonly MessageHistoryService messageService;
         private readonly NewMessageService newMessageService;
         private readonly AnnouncementService announcementService;
+        private readonly BrowserHelper browserHelper;
 
         public MessageHistoryHandler(
-            MessageHistoryService messageService, 
+            MessageHistoryService messageService,
             NewMessageService newMessageService,
-            AnnouncementService announcementService)
+            AnnouncementService announcementService,
+            BrowserHelper browserHelper)
         {
             this.messageService = messageService;
             this.newMessageService = newMessageService;
             this.announcementService = announcementService;
+            this.browserHelper = browserHelper;
         }
 
         public MessagesHistoryViewModel Handle(MessageHistoryQuery message)
-        {            
+        {
             var lastSeenDate = GetLastSeenDate(message.CustId, message.SubAccId, message.MessageType);
             var messageParams = (MessageHistoryParams)message.ConvertToParameters();
             var messages = messageService.GetMessagesHistory(messageParams);
@@ -41,7 +45,8 @@
                 message.EndDate,
                 message.MessageType,
                 message.RoleId,
-                numberOfUnreadMessage);
+                numberOfUnreadMessage,
+                browserHelper);
         }
 
         private static void UpdateUnreadMessageOnSession(MessageHistoryQuery message, NumberOfUnreadMessage unreadMessage)

@@ -31,7 +31,7 @@ namespace Alpha.Messages.Site.Tests.ViewModel
                 new AlphaAnnouncement(12,"content","code",DateTime.Now,DateTime.Now,null)
             };
             var unreadMessage = FakeDataHelper.Create<NumberOfUnreadMessage>();
-            var viewModel = new AnnouncementHistoryViewModel(announcements, DateTime.Now, DateTime.Now, MessageType.Normal, UserLevel.Agent, unreadMessage);
+            var viewModel = new AnnouncementHistoryViewModel(announcements, DateTime.Now, DateTime.Now, MessageType.Normal, UserLevel.Agent, unreadMessage, null);
 
             //// Act
             var act = viewModel.Announcements;
@@ -50,7 +50,7 @@ namespace Alpha.Messages.Site.Tests.ViewModel
             };
             var unreadMessage = FakeDataHelper.Create<NumberOfUnreadMessage>();
             var fromDate = DateTime.Now.AddDays(-1);
-            var viewModel = new AnnouncementHistoryViewModel(announcements, fromDate, DateTime.Now, MessageType.Normal, UserLevel.Agent, unreadMessage);
+            var viewModel = new AnnouncementHistoryViewModel(announcements, fromDate, DateTime.Now, MessageType.Normal, UserLevel.Agent, unreadMessage, null);
 
             //// Act
             var act = viewModel.FromDate;
@@ -69,7 +69,7 @@ namespace Alpha.Messages.Site.Tests.ViewModel
             };
             var unreadMessage = FakeDataHelper.Create<NumberOfUnreadMessage>();
             var toDate = DateTime.Now.AddDays(-1);
-            var viewModel = new AnnouncementHistoryViewModel(announcements, DateTime.Now, toDate, MessageType.Normal, UserLevel.Agent, unreadMessage);
+            var viewModel = new AnnouncementHistoryViewModel(announcements, DateTime.Now, toDate, MessageType.Normal, UserLevel.Agent, unreadMessage, null);
 
             //// Act
             var act = viewModel.ToDate;
@@ -87,7 +87,7 @@ namespace Alpha.Messages.Site.Tests.ViewModel
                 new AlphaAnnouncement(12, "content", "code", DateTime.Now, DateTime.Now, null)
             };
             var unreadMessage = FakeDataHelper.Create<NumberOfUnreadMessage>();
-            var viewModel = new AnnouncementHistoryViewModel(announcements, DateTime.Now, DateTime.Now, MessageType.Normal, UserLevel.Agent, unreadMessage);
+            var viewModel = new AnnouncementHistoryViewModel(announcements, DateTime.Now, DateTime.Now, MessageType.Normal, UserLevel.Agent, unreadMessage, null);
 
             //// Act
             var act = viewModel.MinDate;

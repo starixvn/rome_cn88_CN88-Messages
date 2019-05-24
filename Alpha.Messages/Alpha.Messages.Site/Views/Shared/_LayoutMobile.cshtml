@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@(ViewBag.Title ?? Resources.announcement)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favico.ico" />
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.Render($"/bundles/site-messages/default")
+    @StaticResources.RenderStyles("~/assets/bundles/default-message")
+    @RenderSection("Styles", required: false)
+</head>
+<body @(Html.Raw(Alpha.Messages.Site.Helpers.BrowserManager.BuildMobileHtmlClass()))>
+    <ul class="nav nav-tabs" role="tablist">
+        @Html.Partial("Tabs")
+    </ul>
+    <div class="tab-content">
+        @RenderBody()
+    </div>
+    @StaticResources.AssetScripts.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetScripts.Render("/bundles/site-messages/message-default")
+    @RenderSection("Scripts", required: false)
+    @Html.Raw(Fanex.Logging.LogManager.RenderJavascriptLogger())
+    @GoogleAnalyticHepler.Render()
+</body>
+</html>

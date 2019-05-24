@@ -186,4 +186,16 @@
   <data name="message" xml:space="preserve">
     <value>訊息</value>
   </data>
+  <data name="normalAnnouncement_Mobile" xml:space="preserve">
+    <value>一般公告</value>
+  </data>
+  <data name="specialAnnouncement_Mobile" xml:space="preserve">
+    <value>重要公告</value>
+  </data>
+  <data name="systemAnnouncement_Mobile" xml:space="preserve">
+    <value>系統公告</value>
+  </data>
+  <data name="personalMessage_Mobile" xml:space="preserve">
+    <value>個人公告</value>
+  </data>
 </root>

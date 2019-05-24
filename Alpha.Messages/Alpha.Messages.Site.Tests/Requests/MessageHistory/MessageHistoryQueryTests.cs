@@ -38,9 +38,9 @@
             Assert.AreEqual(custId, query.CustId);
         }
 
-        [TestCase(RoleId.Super, "3000,3100")]
-        [TestCase(RoleId.Master, "3000,3200")]
-        [TestCase(RoleId.Agent, "3000,3300")]
+        [TestCase(RoleId.Super, "3120")]
+        [TestCase(RoleId.Master, "3220")]
+        [TestCase(RoleId.Agent, "3320")]
         public void ParentSites_Always_ReturnCorrectByUserLevelId(byte userLevelId, string expectedParentSitesId)
         {
             // Arrange
@@ -183,7 +183,7 @@
 
             // Assert
             Assert.AreEqual(currentLang, query.Language);
-        }        
+        }
 
         [Test]
         public void RoleId_Always_EqualsValueSetFromCtor()
