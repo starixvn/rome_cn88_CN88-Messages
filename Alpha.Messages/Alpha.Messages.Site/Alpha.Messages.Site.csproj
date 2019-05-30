@@ -330,6 +330,11 @@
     </Content>
     <Content Include="App_Data\SPNames\INTERNAL\DBONUSER.ON_USER.xml" />
     <Content Include="App_Data\SPNames\INTERNAL\DBTXN.BODB02.xml" />
+    <Content Include="App_Data\SPNames\Dev\DBAGE.bodb02.xml" />
+    <Content Include="App_Data\SPNames\Dev\DBCUST.CustDB.xml" />
+    <Content Include="App_Data\SPNames\Dev\DBMSG.bodb_Message.xml" />
+    <Content Include="App_Data\SPNames\Dev\DBONUSER.ON_USER.xml" />
+    <Content Include="App_Data\SPNames\Dev\DBTXN.BODB02.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBAGE.bodb02.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBCUST.CustDB.xml" />
     <Content Include="App_Data\SPNames\LOCAL\DBMSG.bodb_Message.xml" />
