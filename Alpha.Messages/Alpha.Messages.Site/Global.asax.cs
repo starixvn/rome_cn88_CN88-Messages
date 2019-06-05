@@ -59,7 +59,8 @@
 
             RefDataTypeContainer
                 .ConnectTo(new Uri(AppSettings.RemoteRefURL))
-                .FromApplication("Alpha.Messages.Site");
+                .FromApplication("Alpha.Messages.Site")
+				.RegisterSupportedLanguages("en-US", "zh-Hans", "zh-TW");
         }
 
         protected void Application_Error()
