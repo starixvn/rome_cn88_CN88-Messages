@@ -1,0 +1,48 @@
+﻿@using Alpha.Messages.Services
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>New Announcement</title>
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.Render("/bundles/site-features/default")
+    @StaticResources.RenderStyles("~/assets/bundles/extendMessage")
+</head>
+<body>
+    <div class="report-detail wager-report">
+        <div class="baio-title-effect-date-format">@Lang.NewBetTypeOfSoccerTitle</div>
+        <table class="tbl-noborder tbl-report settlement-report">
+            <thead class="tableFloatingHeaderOriginal">
+                <tr>
+                    <th>@Lang.SportType</th>
+                    <th>@Lang.NewBetType</th>
+                    <th>@Lang.CommissionSettingFollows</th>
+                    <th>@Lang.BetSettingFollows</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center">@AlphaRemotingRefService.GetSportTypeName(1)</td>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("467")</td>
+                    <td class="center">@Lang.LabelOtherTypes</td>
+                    <td class="center">@Lang.LabelOtherTypes</td>
+                </tr>
+                <tr>
+                    <td class="center">@AlphaRemotingRefService.GetSportTypeName(1)</td>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("468")</td>
+                    <td class="center">@Lang.LabelOtherTypes</td>
+                    <td class="center">@Lang.LabelOtherTypes</td>
+                </tr>
+                <tr>
+                    <td class="center">@AlphaRemotingRefService.GetSportTypeName(1)</td>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("469")</td>
+                    <td class="center">@Lang.LabelOtherTypes</td>
+                    <td class="center">@Lang.LabelOtherTypes</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
