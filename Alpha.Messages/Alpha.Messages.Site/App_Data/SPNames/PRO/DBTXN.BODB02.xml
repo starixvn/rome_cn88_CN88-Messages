@@ -3,7 +3,7 @@
   <Function Name="Notification During Move-bet Process">
     <Setting Key="Age_MoveBetsProcessNotification" SpName="Acc_ShowNotificationWhenProcessingData" DbName="DBTXN.bodb02.BODBDownlineNet" Plain="0" >
       <Mapping DataField="Content_EN" ObjectProperty="contentEN" />
-      <Mapping DataField="Content_CS" ObjectProperty="contentCS" />
+      <Mapping DataField="Content_zhcn" ObjectProperty="contentCS" />
       <Mapping DataField="Content_CH" ObjectProperty="contentCH" />
       <Mapping DataField="Content_CN" ObjectProperty="contentCN" />
       <Mapping DataField="Content_JP" ObjectProperty="contentJP" />

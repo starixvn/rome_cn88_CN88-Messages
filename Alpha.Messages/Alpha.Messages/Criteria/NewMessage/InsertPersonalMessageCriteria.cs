@@ -31,7 +31,7 @@
         [SpParam(SqlParamName = "content_ch")]
         public string ContentCH { get; set; }
 
-        [SpParam(SqlParamName = "content_cs")]
+        [SpParam(SqlParamName = "content_zhcn")]
         public string ContentCS { get; set; }
 
         [SpParam(SqlParamName = "content_jp")]

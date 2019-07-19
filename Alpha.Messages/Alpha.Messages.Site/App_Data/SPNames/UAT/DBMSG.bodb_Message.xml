@@ -10,7 +10,7 @@
     <Setting Key="Dot_Msg_GetTopPriMessage24" SpName="Dot_Msg_GetTopPriMessage24" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
-      <Mapping DataField="Content_cs" ObjectProperty="ContentCS" />
+      <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />
       <Mapping DataField="Content_ch" ObjectProperty="ContentCH" />
       <Mapping DataField="Content_jp" ObjectProperty="ContentJP" />
       <Mapping DataField="Content_th" ObjectProperty="ContentTH" />
@@ -22,7 +22,7 @@
     <Setting Key="Acc_Msg_GetTopPubMessage" SpName="Acc_Msg_GetTopPubMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0" >
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
-      <Mapping DataField="Content_cs" ObjectProperty="ContentCS" />
+      <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />
       <Mapping DataField="Content_ch" ObjectProperty="ContentCH" />
       <Mapping DataField="Content_jp" ObjectProperty="ContentJP" />
       <Mapping DataField="Content_th" ObjectProperty="ContentTH" />
@@ -38,7 +38,7 @@
     <Setting Key="Dot_Msg_GetPublicMessage" SpName="Dot_Msg_GetPublicMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
-      <Mapping DataField="Content_cs" ObjectProperty="ContentCS" />
+      <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />
       <Mapping DataField="Content_ch" ObjectProperty="ContentCH" />
       <Mapping DataField="Content_jp" ObjectProperty="ContentJP" />
       <Mapping DataField="Content_th" ObjectProperty="ContentTH" />
@@ -50,7 +50,7 @@
     <Setting Key="Dot_Msg_GetSpecialMessage" SpName="Dot_Msg_GetSpecialMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
-      <Mapping DataField="Content_cs" ObjectProperty="ContentCS" />
+      <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />
       <Mapping DataField="Content_ch" ObjectProperty="ContentCH" />
       <Mapping DataField="Content_jp" ObjectProperty="ContentJP" />
       <Mapping DataField="Content_th" ObjectProperty="ContentTH" />
@@ -62,7 +62,7 @@
     <Setting Key="Dot_Msg_GetPrivateMessage" SpName="Dot_Msg_GetPrivateMessage" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
-      <Mapping DataField="Content_cs" ObjectProperty="ContentCS" />
+      <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />
       <Mapping DataField="Content_ch" ObjectProperty="ContentCH" />
       <Mapping DataField="Content_jp" ObjectProperty="ContentJP" />
       <Mapping DataField="Content_th" ObjectProperty="ContentTH" />
@@ -77,7 +77,7 @@
     <Setting Key="Age_CustomerSelMessages" SpName="Age_CustomerSelMessages" DbName="DBMSG.bodb_Message.BODBDownlineNet" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
-      <Mapping DataField="Content_cs" ObjectProperty="ContentCS" />
+      <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />
       <Mapping DataField="Content_ch" ObjectProperty="ContentCH" />
       <Mapping DataField="Content_jp" ObjectProperty="ContentJP" />
       <Mapping DataField="Content_th" ObjectProperty="ContentTH" />
