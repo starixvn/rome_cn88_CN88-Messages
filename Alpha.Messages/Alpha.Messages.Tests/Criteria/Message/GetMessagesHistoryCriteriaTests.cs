@@ -11,12 +11,36 @@
     public class GetMessagesHistoryCriteriaTests
     {
         [TestCase(MessageType.Personal, "CS_Msg_GetPrivateMessage")]
-        [TestCase(MessageType.Normal, "Dot_Msg_GetPublicMessage")]
-        [TestCase(MessageType.Special, "Dot_Msg_GetSpecialMessage")]
-        public void GetSettingKey_Always_ReturnValidSettingKeyByLevel(int messageType, string settingKey)
+        public void GetSettingKeyPrivate_Always_ReturnValidSettingKeyByLevel(int messageType, string settingKey)
         {
             // Arrange
-            var criteria = FakeDataHelper.Create<GetMessagesHistoryCriteria>("messageType", messageType);
+            var criteria = FakeDataHelper.Create<GetPrivateMessagesHistoryCriteria>("messageType", messageType);
+
+            // Act
+            var actualSettingKey = criteria.GetSettingKey();
+
+            // Assert
+            Assert.AreEqual(settingKey, actualSettingKey);
+        }
+        
+        [TestCase(MessageType.Special, "Dot_Msg_GetSpecialMessage")]
+        public void GetSettingKeySpecial_Always_ReturnValidSettingKeyByLevel(int messageType, string settingKey)
+        {
+            // Arrange
+            var criteria = FakeDataHelper.Create<GetSpecialMessagesHistoryCriteria>("messageType", messageType);
+
+            // Act
+            var actualSettingKey = criteria.GetSettingKey();
+
+            // Assert
+            Assert.AreEqual(settingKey, actualSettingKey);
+        }
+        
+        [TestCase(MessageType.Normal, "Dot_Msg_GetPublicMessage")]
+        public void GetSettingKeyPublic_Always_ReturnValidSettingKeyByLevel(int messageType, string settingKey)
+        {
+            // Arrange
+            var criteria = FakeDataHelper.Create<GetPublicMessagesHistoryCriteria>("messageType", messageType);
 
             // Act
             var actualSettingKey = criteria.GetSettingKey();
@@ -34,7 +58,7 @@
             parameters.Add("custId", 69);
             parameters.Add("parentSites", "1");
 
-            var criteria = FakeDataHelper.Create<GetMessagesHistoryCriteria>(parameters);
+            var criteria = FakeDataHelper.Create<GetPublicMessagesHistoryCriteria>(parameters);
 
             // Act
             var actual = criteria.IsValid();
@@ -53,7 +77,7 @@
             parameters.Add("custId", custId);
             parameters.Add("parentSites", parentSites);
 
-            var criteria = FakeDataHelper.Create<GetMessagesHistoryCriteria>(parameters);
+            var criteria = FakeDataHelper.Create<GetPublicMessagesHistoryCriteria>(parameters);
 
             // Act
             var actual = criteria.IsValid();
@@ -74,7 +98,7 @@
             var isTest = false;
 
             // Act
-            var criteria = new GetMessagesHistoryCriteria(
+            var criteria = new GetPublicMessagesHistoryCriteria(
                 custId,
                 parentSites,
                 specialType,

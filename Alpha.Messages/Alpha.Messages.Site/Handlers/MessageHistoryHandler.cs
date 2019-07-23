@@ -8,6 +8,7 @@
     using Requests.MessageHistory;
     using Services;
     using ViewModels;
+    using Constants;
 
     public class MessageHistoryHandler : IRequestHandler<MessageHistoryQuery, MessagesHistoryViewModel>
     {
@@ -32,7 +33,9 @@
         {
             var lastSeenDate = GetLastSeenDate(message.CustId, message.SubAccId, message.MessageType);
             var messageParams = (MessageHistoryParams)message.ConvertToParameters();
-            var messages = messageService.GetMessagesHistory(messageParams);
+            var messages = message.MessageType == MessageType.Personal ? messageService.GetPrivateMessagesHistory(messageParams) : 
+                message.MessageType == MessageType.Special ? messageService.GetSpecialMessagesHistory(messageParams) : 
+                messageService.GetPublicMessagesHistory(messageParams);
 
             var numberOfUnreadMessage = newMessageService.GetNumberOfUnreadMessage(messageParams);
             UpdateUnreadMessageOnSession(message, numberOfUnreadMessage);

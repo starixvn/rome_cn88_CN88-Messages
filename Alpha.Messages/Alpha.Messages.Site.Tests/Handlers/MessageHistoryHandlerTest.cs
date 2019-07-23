@@ -56,7 +56,7 @@
         {
             // Arrange
             var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();
-            messageService.GetMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
+            messageService.GetPrivateMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
             announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>())
                 .Returns(FakeDataHelper.Create<LastSeenAnnouncement>());
 
@@ -73,7 +73,7 @@
             // Assert
             messageService
                 .Received()
-                .GetMessagesHistory(Arg.Is<MessageHistoryParams>(i => i.CustId == query.CustId
+                .GetPrivateMessagesHistory(Arg.Is<MessageHistoryParams>(i => i.CustId == query.CustId
                 && i.ParentSites == query.ParentSites
                 && i.SpecialType == query.SpecialType
                 && i.StartDate == query.StartDate
@@ -95,12 +95,156 @@
             var lastSeenAnnouncement = new LastSeenAnnouncement(263, now, now, now, now);
             var numberOfUnReadMessage = FakeDataHelper.Create<NumberOfUnreadMessage>();
             newMessageService.GetNumberOfUnreadMessage(Arg.Any<BaseAnnouncementsParams>()).Returns(numberOfUnReadMessage);
-            messageService.GetMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
+            messageService.GetPrivateMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
             announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>()).Returns(lastSeenAnnouncement);
 
             var query = new MessageHistoryQuery(
                 userSession,
                 1,
+                DateTime.Today,
+                DateTime.Today,
+                false);
+
+            var expectedViewModel = new MessagesHistoryViewModel(
+                messages,
+                now,
+                Language.Default,
+                query.StartDate,
+                query.EndDate,
+                query.MessageType,
+                query.RoleId,
+                numberOfUnReadMessage,
+                browserHelper);
+
+            // Act
+            var viewModel = messageHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
+        }
+
+        [Test]
+        public void HandlePublic_NotNullQuery_CallGetMessagesHistory()
+        {
+            // Arrange
+            var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();
+            messageService.GetPublicMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
+            announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>())
+                .Returns(FakeDataHelper.Create<LastSeenAnnouncement>());
+
+            var query = new MessageHistoryQuery(
+                userSession,
+                0,
+                DateTime.Today,
+                DateTime.Today,
+                false);
+
+            // Act
+            messageHandler.Handle(query);
+
+            // Assert
+            messageService
+                .Received()
+                .GetPublicMessagesHistory(Arg.Is<MessageHistoryParams>(i => i.CustId == query.CustId
+                && i.ParentSites == query.ParentSites
+                && i.SpecialType == query.SpecialType
+                && i.StartDate == query.StartDate
+                && i.EndDate == query.EndDate
+                && i.LimitedDate == query.LimitedDateToShowInfo
+                && i.IsTest == query.IsTest
+                && i.MessageType == query.MessageType));
+        }
+
+        [Test]
+        public void HandleMessageQueryPublic_NotNullQuery_ReturnMessagesViewModel()
+        {
+            // Arrange
+            var compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
+            var now = DateTime.Now;
+
+            var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();
+            var lastSeenAnnouncement = new LastSeenAnnouncement(263, now, now, now, now);
+            var numberOfUnReadMessage = FakeDataHelper.Create<NumberOfUnreadMessage>();
+            newMessageService.GetNumberOfUnreadMessage(Arg.Any<BaseAnnouncementsParams>()).Returns(numberOfUnReadMessage);
+            messageService.GetPublicMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
+            announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>()).Returns(lastSeenAnnouncement);
+
+            var query = new MessageHistoryQuery(
+                userSession,
+                0,
+                DateTime.Today,
+                DateTime.Today,
+                false);
+
+            var expectedViewModel = new MessagesHistoryViewModel(
+                messages,
+                now,
+                Language.Default,
+                query.StartDate,
+                query.EndDate,
+                query.MessageType,
+                query.RoleId,
+                numberOfUnReadMessage,
+                browserHelper);
+
+            // Act
+            var viewModel = messageHandler.Handle(query);
+
+            // Assert
+            Assert.IsTrue(compareLogic.Compare(expectedViewModel, viewModel).AreEqual);
+        }
+
+        [Test]
+        public void HandleSpecial_NotNullQuery_CallGetMessagesHistory()
+        {
+            // Arrange
+            var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();
+            messageService.GetSpecialMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
+            announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>())
+                .Returns(FakeDataHelper.Create<LastSeenAnnouncement>());
+
+            var query = new MessageHistoryQuery(
+                userSession,
+                2,
+                DateTime.Today,
+                DateTime.Today,
+                false);
+
+            // Act
+            messageHandler.Handle(query);
+
+            // Assert
+            messageService
+                .Received()
+                .GetSpecialMessagesHistory(Arg.Is<MessageHistoryParams>(i => i.CustId == query.CustId
+                && i.ParentSites == query.ParentSites
+                && i.SpecialType == query.SpecialType
+                && i.StartDate == query.StartDate
+                && i.EndDate == query.EndDate
+                && i.LimitedDate == query.LimitedDateToShowInfo
+                && i.IsTest == query.IsTest
+                && i.MessageType == query.MessageType));
+        }
+
+        [Test]
+        public void HandleMessageQuerySpecial_NotNullQuery_ReturnMessagesViewModel()
+        {
+            // Arrange
+            var compareLogic = new CompareLogic();
+            UrlHelperTestSetUp.SetUp();
+            var now = DateTime.Now;
+
+            var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();
+            var lastSeenAnnouncement = new LastSeenAnnouncement(263, now, now, now, now);
+            var numberOfUnReadMessage = FakeDataHelper.Create<NumberOfUnreadMessage>();
+            newMessageService.GetNumberOfUnreadMessage(Arg.Any<BaseAnnouncementsParams>()).Returns(numberOfUnReadMessage);
+            messageService.GetSpecialMessagesHistory(Arg.Any<MessageHistoryParams>()).Returns(messages);
+            announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>()).Returns(lastSeenAnnouncement);
+
+            var query = new MessageHistoryQuery(
+                userSession,
+                2,
                 DateTime.Today,
                 DateTime.Today,
                 false);

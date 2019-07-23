@@ -192,7 +192,10 @@
     <Compile Include="Constants\MessageType.cs" />
     <Compile Include="Constants\SessionKey.cs" />
     <Compile Include="Criteria\Customer\GetCustomerInfoCriteria.cs" />
-    <Compile Include="Criteria\Message\GetMessagesHistoryCriteria.cs" />
+    <Compile Include="Criteria\Message\GetMessagesHistoryCriteriaBase.cs" />
+    <Compile Include="Criteria\Message\GetPrivateMessagesHistoryCriteria.cs" />
+    <Compile Include="Criteria\Message\GetSpecialMessagesHistoryCriteria.cs" />
+    <Compile Include="Criteria\Message\GetPublicMessagesHistoryCriteria.cs" />
     <Compile Include="Criteria\Message\MarkMessageAsReadCommand.cs" />
     <Compile Include="Criteria\NewMessage\GetUnreadMessagesOnUserCriteria.cs" />
     <Compile Include="Criteria\Product\GetOfferedProductCriteria.cs" />
