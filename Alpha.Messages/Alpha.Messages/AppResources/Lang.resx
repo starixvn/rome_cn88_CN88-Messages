@@ -130,7 +130,7 @@
     <value>Odd/Even</value>
   </data>
   <data name="LabelOtherTypes" xml:space="preserve">
-    <value>Other Bettypes</value>
+    <value>Other Bet Types</value>
   </data>
   <data name="LabelOverUnder" xml:space="preserve">
     <value>Over/Under</value>
@@ -167,5 +167,11 @@
   </data>
   <data name="NewBetTypeTitle" xml:space="preserve">
     <value>New bet types of E-Sports:</value>
+  </data>
+  <data name="NewBetTypeOfSoccerTitle" xml:space="preserve">
+    <value>New bet types of Soccer:</value>
+  </data>
+  <data name="SportType" xml:space="preserve">
+    <value>Sport</value>
   </data>
 </root>

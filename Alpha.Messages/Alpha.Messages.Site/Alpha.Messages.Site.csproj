@@ -561,6 +561,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Shared\Tabs.cshtml" />
+    <Content Include="Views\StaticMessage\112894.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

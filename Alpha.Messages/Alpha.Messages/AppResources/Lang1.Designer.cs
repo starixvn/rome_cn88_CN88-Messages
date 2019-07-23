@@ -19,7 +19,7 @@ namespace Alpha.Messages.AppResources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Lang {
@@ -133,7 +133,7 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other Bettypes.
+        ///   Looks up a localized string similar to Other Bet Types.
         /// </summary>
         public static string LabelOtherTypes {
             get {
@@ -178,6 +178,15 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New bet types of Soccer:.
+        /// </summary>
+        public static string NewBetTypeOfSoccerTitle {
+            get {
+                return ResourceManager.GetString("NewBetTypeOfSoccerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New bet types of E-Sports:.
         /// </summary>
         public static string NewBetTypeTitle {
@@ -210,6 +219,15 @@ namespace Alpha.Messages.AppResources {
         public static string PositionTakingSettingFollows {
             get {
                 return ResourceManager.GetString("PositionTakingSettingFollows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sport.
+        /// </summary>
+        public static string SportType {
+            get {
+                return ResourceManager.GetString("SportType", resourceCulture);
             }
         }
     }
