@@ -60,7 +60,7 @@
       <Mapping DataField="TargetId" ObjectProperty="UserId" />
       <Mapping DataField="MsgType" ObjectProperty="MessageType" />
     </Setting>
-    <Setting Key="Dot_Msg_GetPrivateMessage" SpName="Dot_Msg_GetPrivateMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+    <Setting Key="CS_Msg_GetPrivateMessage" SpName="CS_Msg_GetPrivateMessage" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
       <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />
@@ -75,7 +75,7 @@
   </Function>
 
   <Function Name="Portal">
-    <Setting Key="Age_CustomerSelMessages" SpName="Age_CustomerSelMessages" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
+    <Setting Key="CS_CustomerSelMessages" SpName="CS_CustomerSelMessages" DbName="DBMSG.bodb_Message.BODBDownlineNetView" Plain="0">
       <Mapping DataField="MessageId" ObjectProperty="Id" />
       <Mapping DataField="Content_en" ObjectProperty="ContentEN" />
       <Mapping DataField="Content_zhcn" ObjectProperty="ContentCS" />

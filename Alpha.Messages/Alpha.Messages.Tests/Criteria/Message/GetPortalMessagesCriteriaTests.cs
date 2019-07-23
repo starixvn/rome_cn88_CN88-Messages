@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Alpha.Messages.Criteria.Message;
+﻿using Alpha.Messages.Criteria.Message;
 using NUnit.Framework;
 
 namespace Alpha.Messages.Tests.Criteria.Message
@@ -15,7 +10,8 @@ namespace Alpha.Messages.Tests.Criteria.Message
         {
             //// Arrange
             var custId = 123;
-            var criteria = new GetPortalMessagesCriteria(custId, "parentSite", 10, true);
+            var subAccId = 456;
+            var criteria = new GetPortalMessagesCriteria(custId, subAccId, "parentSite", 10, true);
 
             //// Act
             var act = criteria.CustId;
@@ -29,7 +25,7 @@ namespace Alpha.Messages.Tests.Criteria.Message
         {
             //// Arrange
             var parentSites = "ParentSites";
-            var criteria = new GetPortalMessagesCriteria(123, parentSites, 10, true);
+            var criteria = new GetPortalMessagesCriteria(123, 456, parentSites, 10, true);
 
             //// Act
             var act = criteria.ParentSites;
@@ -43,7 +39,7 @@ namespace Alpha.Messages.Tests.Criteria.Message
         {
             //// Arrange
             var totalMessage  = 123;
-            var criteria = new GetPortalMessagesCriteria(123 , "parentSite", totalMessage, true);
+            var criteria = new GetPortalMessagesCriteria(123 , 456, "parentSite", totalMessage, true);
 
             //// Act
             var act = criteria.TotalMessage;
@@ -57,7 +53,7 @@ namespace Alpha.Messages.Tests.Criteria.Message
         {
             //// Arrange
             var isTest = true;
-            var criteria = new GetPortalMessagesCriteria(123, "parentSite", 10, isTest);
+            var criteria = new GetPortalMessagesCriteria(123, 456, "parentSite", 10, isTest);
 
             //// Act
             var act = criteria.IsTest;
@@ -67,11 +63,11 @@ namespace Alpha.Messages.Tests.Criteria.Message
         }
 
         [Test]
-        public void GetSettingKey_Always_IsAge_CustomerSelMessages()
+        public void GetSettingKey_Always_IsCS_CustomerSelMessages()
         {
             //// Arrange
-            var key = "Age_CustomerSelMessages";
-            var criteria = new GetPortalMessagesCriteria(123, "parentSite", 10, true);
+            var key = "CS_CustomerSelMessages";
+            var criteria = new GetPortalMessagesCriteria(123, 456, "parentSite", 10, true);
 
             //// Act
             var act = criteria.GetSettingKey();
@@ -84,7 +80,7 @@ namespace Alpha.Messages.Tests.Criteria.Message
         public void IsValid_ValidParamater_ReturnTrue()
         {
             //// Arrange
-            var criteria = new GetPortalMessagesCriteria(123, "parentSite", 10, true);
+            var criteria = new GetPortalMessagesCriteria(123, 456, "parentSite", 10, true);
 
             //// Act
             var act = criteria.IsValid();
@@ -97,7 +93,7 @@ namespace Alpha.Messages.Tests.Criteria.Message
         public void IsValid_InValidCustIdParamater_ReturnFalse()
         {
             //// Arrange
-            var criteria = new GetPortalMessagesCriteria(0, "parentSite", 10, true);
+            var criteria = new GetPortalMessagesCriteria(0, 0, "parentSite", 10, true);
 
             //// Act
             var act = criteria.IsValid();
@@ -110,7 +106,7 @@ namespace Alpha.Messages.Tests.Criteria.Message
         public void IsValid_InValidParentSitesParamater_ReturnFalse()
         {
             //// Arrange
-            var criteria = new GetPortalMessagesCriteria(100, string.Empty, 10, true);
+            var criteria = new GetPortalMessagesCriteria(100, 200, string.Empty, 10, true);
 
             //// Act
             var act = criteria.IsValid();

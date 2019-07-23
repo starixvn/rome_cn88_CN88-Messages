@@ -10,7 +10,7 @@
     [TestFixture]
     public class GetMessagesHistoryCriteriaTests
     {
-        [TestCase(MessageType.Personal, "Dot_Msg_GetPrivateMessage")]
+        [TestCase(MessageType.Personal, "CS_Msg_GetPrivateMessage")]
         [TestCase(MessageType.Normal, "Dot_Msg_GetPublicMessage")]
         [TestCase(MessageType.Special, "Dot_Msg_GetSpecialMessage")]
         public void GetSettingKey_Always_ReturnValidSettingKeyByLevel(int messageType, string settingKey)

@@ -21,10 +21,11 @@
         public PortalMessagesViewModel Handle(PortalMessageQuery message)
         {
             var noticeMessages = noticeService.GetPortalMessages(
-                                    message.CustId,
-                                    message.ParentSites,
-                                    message.TotalMessage,
-                                    message.IsTest);
+                message.CustId,
+                message.SubAccId,
+                message.ParentSites,
+                message.TotalMessage,
+                message.IsTest);
 
             var noticeMessageWrappers = new List<PortalMessageWrapper>(
                 noticeMessages.Select(m => new PortalMessageWrapper(m, message.CurrentLang)));

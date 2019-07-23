@@ -12,11 +12,11 @@
     public class MessageHistoryQuery : MessageHistoryBaseRequest, IRequest<MessagesHistoryViewModel>
     {
         public MessageHistoryQuery(
-                IUserSession userSession,
-                int messageType,
-                DateTime startDate,
-                DateTime endDate,
-                bool isTest) : base(userSession)
+            IUserSession userSession,
+            int messageType,
+            DateTime startDate,
+            DateTime endDate,
+            bool isTest) : base(userSession)
         {
             MessageType = messageType;
             SpecialType = MessageConstants.SpecialTypes[messageType];
@@ -52,15 +52,15 @@
 
         public override BaseAnnouncementsParams ConvertToParameters()
             => new MessageHistoryParams(
-                     CustId,
-                     SubAccId,
-                     AdminId,
-                     ParentSites,
-                     SpecialType,
-                     StartDate,
-                     EndDate,
-                     LimitedDateToShowInfo,
-                     IsTest,
-                     MessageType);
+                CustId,
+                SubAccId,
+                AdminId,
+                ParentSites,
+                SpecialType,
+                StartDate,
+                EndDate,
+                LimitedDateToShowInfo,
+                IsTest,
+                MessageType);
     }
 }
