@@ -1,14 +1,14 @@
 ﻿namespace Alpha.Messages.Site.Handlers
 {
     using System;
-    using Helpers;
+    using CN88.Web.Helpers;
+    using Constants;
     using MediatR;
     using Models.Message;
     using Params;
     using Requests.MessageHistory;
     using Services;
     using ViewModels;
-    using Constants;
 
     public class MessageHistoryHandler : IRequestHandler<MessageHistoryQuery, MessagesHistoryViewModel>
     {
@@ -33,8 +33,8 @@
         {
             var lastSeenDate = GetLastSeenDate(message.CustId, message.SubAccId, message.MessageType);
             var messageParams = (MessageHistoryParams)message.ConvertToParameters();
-            var messages = message.MessageType == MessageType.Personal ? messageService.GetPrivateMessagesHistory(messageParams) : 
-                message.MessageType == MessageType.Special ? messageService.GetSpecialMessagesHistory(messageParams) : 
+            var messages = message.MessageType == MessageType.Personal ? messageService.GetPrivateMessagesHistory(messageParams) :
+                message.MessageType == MessageType.Special ? messageService.GetSpecialMessagesHistory(messageParams) :
                 messageService.GetPublicMessagesHistory(messageParams);
 
             var numberOfUnreadMessage = newMessageService.GetNumberOfUnreadMessage(messageParams);
@@ -63,6 +63,5 @@
 
             return lastSeenMessage.GetLastSeenByType(messageType);
         }
-
     }
 }

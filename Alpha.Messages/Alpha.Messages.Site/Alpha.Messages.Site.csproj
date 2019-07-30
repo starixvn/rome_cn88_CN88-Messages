@@ -71,7 +71,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="CN88.Web, Version=1.0.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CN88.Web.1.0.1.5-subacc02\lib\net461\CN88.Web.dll</HintPath>
+      <HintPath>..\..\packages\CN88.Web.1.0.1.5-subacc03\lib\net461\CN88.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
@@ -518,8 +518,6 @@
     <Compile Include="Handlers\MarqueeMessageHandler.cs" />
     <Compile Include="Handlers\MessageHistoryHandler.cs" />
     <Compile Include="Handlers\PortalMessageHandler.cs" />
-    <Compile Include="Helpers\BrowserHelper.cs" />
-    <Compile Include="Helpers\BrowserHelperImpl.cs" />
     <Compile Include="Helpers\QueryEntityModelBinder.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using CN88.Web.Helpers;
     using Helpers;
     using KellermanSoftware.CompareNetObjects;
     using Messages.Constants;
@@ -14,7 +15,6 @@
     using Ploeh.AutoFixture;
     using Services;
     using Site.Handlers;
-    using Site.Helpers;
     using Site.Requests.MessageHistory;
     using Site.ViewModels;
     using Sunplus.Agent.Model.Entities;
