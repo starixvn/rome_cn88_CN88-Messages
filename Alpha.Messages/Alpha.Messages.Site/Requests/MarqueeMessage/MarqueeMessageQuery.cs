@@ -9,12 +9,12 @@
     {
         public MarqueeMessageQuery(
             IUserSession userSession,
-            bool? isTest = null)
+            bool isTest)
         {
             CustId = userSession.CustId;
             CurrentLang = userSession.Language;
             RoleId = userSession.RoleId;
-            IsTest = isTest ?? AppSettings.LocalTest;
+            IsTest = isTest;
         }
 
         public int CustId { get; }

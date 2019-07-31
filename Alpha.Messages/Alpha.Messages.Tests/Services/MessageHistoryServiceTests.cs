@@ -63,7 +63,6 @@
                     DateTime.Today,
                     DateTime.Today,
                     limitedDate,
-                    false,
                     personalType));
 
             //// Assert
@@ -90,7 +89,6 @@
                     DateTime.MinValue,
                     DateTime.Now,
                     DateTime.MinValue,
-                    false,
                     personalType));
 
             //// Assert
@@ -117,7 +115,6 @@
                     DateTime.MinValue,
                     DateTime.Now,
                     DateTime.MinValue,
-                    false,
                     personalType));
 
             //// Assert
@@ -145,7 +142,6 @@
                     DateTime.MinValue,
                     DateTime.Now,
                     DateTime.MinValue,
-                    false,
                     personalType));
 
             //// Assert

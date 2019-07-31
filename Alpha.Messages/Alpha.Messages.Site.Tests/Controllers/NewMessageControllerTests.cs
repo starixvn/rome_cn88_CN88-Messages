@@ -29,7 +29,7 @@
         public void Index_Always_SetSpecificationToQuery()
         {
             //// Arrange
-            var query = new NumberOfNewMessageQuery(fixtures.UserSession);
+            var query = new NumberOfNewMessageQuery(fixtures.UserSession, false);
             var controller = new NewMessageController(mediator, specificationParam);
 
             //// Act
@@ -43,7 +43,7 @@
         public void Index_Always_SendQueryToMediator()
         {
             //// Arrange
-            var query = new NumberOfNewMessageQuery(fixtures.UserSession);
+            var query = new NumberOfNewMessageQuery(fixtures.UserSession, false);
             var controller = new NewMessageController(mediator, specificationParam);
 
             //// Act

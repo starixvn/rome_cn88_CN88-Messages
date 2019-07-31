@@ -14,7 +14,6 @@
             DateTime startDate,
             DateTime endDate,
             DateTime limitedDate,
-            bool isTest,
             int messageType)
         {
             CustId = custId;
@@ -25,7 +24,6 @@
             StartDate = startDate;
             EndDate = endDate;
             LimitedDate = limitedDate;
-            IsTest = isTest;
             MessageType = messageType;
         }
 
@@ -33,7 +31,6 @@
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; }
         public DateTime LimitedDate { get; }
-        public bool IsTest { get; }
         public int MessageType { get; }
     }
 }

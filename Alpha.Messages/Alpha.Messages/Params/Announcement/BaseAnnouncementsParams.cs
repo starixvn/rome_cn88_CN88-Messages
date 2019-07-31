@@ -1,9 +1,17 @@
 ﻿namespace Alpha.Messages.Params.Announcement
 {
     using Announcements.Models;
+    using Configurations;
 
     public class BaseAnnouncementsParams
     {
+        public BaseAnnouncementsParams() : this(null) { }
+
+        public BaseAnnouncementsParams(bool? isTest)
+        {
+            IsTest = isTest ?? AppSettings.LocalTest;
+        }
+
         public int SubAccId { get; set; }
 
         public byte RoleId { get; set; }
@@ -25,5 +33,7 @@
         public string ParentSites { get; set; }
 
         public IParam SpecificationParamter { get; set; }
+
+        public bool IsTest { get; set; }
     }
 }

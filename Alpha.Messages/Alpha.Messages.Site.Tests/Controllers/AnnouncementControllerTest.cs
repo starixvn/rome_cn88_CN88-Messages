@@ -29,7 +29,7 @@
         public void Index_Always_SetSpecificationToQuery()
         {
             //// Arrange
-            var query = new AnnouncementsHistoryQuery(fixtures.UserSession);
+            var query = new AnnouncementsHistoryQuery(fixtures.UserSession, false);
             var controller = new AnnouncementController(mediator, specificationParam);
 
             //// Act
@@ -43,7 +43,7 @@
         public void Index_Always_SendQueryToMediator()
         {
             //// Arrange
-            var query = new AnnouncementsHistoryQuery(fixtures.UserSession);
+            var query = new AnnouncementsHistoryQuery(fixtures.UserSession, false);
             var controller = new AnnouncementController(mediator, specificationParam);
 
             //// Act
@@ -57,7 +57,7 @@
         public void Popup_Always_SetSpecificationToQuery()
         {
             //// Arrange
-            var query = new PopupAnnouncementQuery(fixtures.UserSession);
+            var query = new PopupAnnouncementQuery(fixtures.UserSession, false);
             var controller = new AnnouncementController(mediator, specificationParam);
 
             //// Act
@@ -71,7 +71,7 @@
         public void Popup_Always_SendQueryToMediator()
         {
             //// Arrange
-            var query = new PopupAnnouncementQuery(fixtures.UserSession);
+            var query = new PopupAnnouncementQuery(fixtures.UserSession, false);
             var controller = new AnnouncementController(mediator, specificationParam);
 
             //// Act

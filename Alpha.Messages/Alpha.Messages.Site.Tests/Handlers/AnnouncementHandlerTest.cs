@@ -35,7 +35,7 @@
         {
             //// Arrange
             var announcements = new List<AlphaAnnouncement>();
-            var query = new AnnouncementsHistoryQuery(fixture.UserSession);
+            var query = new AnnouncementsHistoryQuery(fixture.UserSession, false);
 
 
             //// Act
@@ -52,7 +52,7 @@
         {
             //// Arrange
             var announcements = new List<AlphaAnnouncement>();
-            var query = new AnnouncementsHistoryQuery(fixture.UserSession);
+            var query = new AnnouncementsHistoryQuery(fixture.UserSession, false);
 
 
             //// Act

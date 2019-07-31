@@ -4,6 +4,7 @@
     using MediatR;
     using Requests.MarqueeMessage;
     using Sunplus.Agent.Model.Entities;
+    using Configurations;
 
     public class MarqueeMessageController : SiteBaseController
     {
@@ -18,7 +19,7 @@
         [HttpPost]
         public ActionResult Index()
         {
-            var query = new MarqueeMessageQuery(userSession, false);
+            var query = new MarqueeMessageQuery(userSession, AppSettings.LocalTest);
 
             return Json(mediator.Send(query));
         }

@@ -8,7 +8,7 @@
 
     public class PopupAnnouncementQuery : MessageHistoryBaseRequest, IRequest<AlphaAnnouncement>
     {
-        public PopupAnnouncementQuery(IUserSession userSession) : base(userSession)
+        public PopupAnnouncementQuery(IUserSession userSession, bool isTest) : base(userSession, isTest)
         {            
         }
 

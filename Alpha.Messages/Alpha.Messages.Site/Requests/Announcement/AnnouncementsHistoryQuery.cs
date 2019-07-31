@@ -5,17 +5,20 @@
     using Params.Announcement;
     using Sunplus.Agent.Model.Entities;
     using ViewModels;
+    using Configurations;
 
     public class AnnouncementsHistoryQuery : MessageHistoryBaseRequest, IRequest<AnnouncementHistoryViewModel>
     {
-        public AnnouncementsHistoryQuery(IUserSession userSession) : base(userSession)
+        public AnnouncementsHistoryQuery() : this(null, null) {  }
+
+        public AnnouncementsHistoryQuery(IUserSession userSession, bool? isTest) : base(userSession, isTest.HasValue && isTest.Value)
         {
-            ToDate = DateTime.Now;
+            IsTest = isTest ?? AppSettings.LocalTest;
         }
 
         public DateTime FromDate { get; set; }
 
-        public DateTime ToDate { get; set; }
+        public DateTime ToDate { get; set; } = DateTime.Now;
 
         override public BaseAnnouncementsParams ConvertToParameters()
         {
@@ -31,7 +34,8 @@
                 UserName = UserName,
                 FromDate = FromDate,
                 ToDate = ToDate.AddDays(1).AddSeconds(-1),
-                SpecificationParamter = Specification
+                SpecificationParamter = Specification,
+                IsTest = IsTest
             };
         }
     }
