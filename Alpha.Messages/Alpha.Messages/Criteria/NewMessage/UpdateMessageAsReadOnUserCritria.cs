@@ -8,12 +8,11 @@
         {
             CustId = custId;
             TypeId = typeId;
-            IsViewed = true;
         }
 
         public int CustId { get; }
 
-        public bool IsViewed { get; }
+        public bool IsViewed { get; } = true;
 
         public int TypeId { get; }
 

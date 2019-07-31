@@ -21,6 +21,6 @@
 
         public override string GetSettingKey() => "Age_MsgCustReadStatus_SelUnread";
 
-        public override bool IsValid() => CustId >= 0;
+        public override bool IsValid() => CustId > 0 && SubAccId >= 0;
     }
 }

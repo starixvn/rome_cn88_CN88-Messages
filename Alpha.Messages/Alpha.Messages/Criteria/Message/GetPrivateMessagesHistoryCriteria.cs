@@ -38,6 +38,6 @@
 
         public override string GetSettingKey() => "CS_Msg_GetPrivateMessage";
 
-        public override bool IsValid() => CustId > 0 || SubAccId > 0;
+        public override bool IsValid() => CustId > 0 && SubAccId >= 0;
     }
 }
