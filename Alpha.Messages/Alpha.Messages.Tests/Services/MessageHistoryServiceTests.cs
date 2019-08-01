@@ -53,7 +53,7 @@
             announcementService.UpdateLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>(), false, Arg.Any<int>());
 
             //// Act
-            messageService.GetMessagesHistory(
+            messageService.GetPublicMessagesHistory(
                 new MessageHistoryParams(
                     CustId.ValidId,
                     0,
@@ -63,11 +63,10 @@
                     DateTime.Today,
                     DateTime.Today,
                     limitedDate,
-                    false,
                     personalType));
 
             //// Assert
-            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetMessagesHistoryCriteria>(i => i.StartDate == limitedDate));
+            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetPublicMessagesHistoryCriteria>(i => i.StartDate == limitedDate));
         }
 
         [Test]
@@ -80,7 +79,7 @@
             announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>()).Returns(lastSeenAnnouncement);
 
             //// Act
-            messageService.GetMessagesHistory(
+            messageService.GetPublicMessagesHistory(
                 new MessageHistoryParams(
                     CustId.ValidId,
                     0,
@@ -90,11 +89,10 @@
                     DateTime.MinValue,
                     DateTime.Now,
                     DateTime.MinValue,
-                    false,
                     personalType));
 
             //// Assert
-            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetMessagesHistoryCriteria>(i => i.StartDate.Date == threeDayAgo.Date));
+            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetPublicMessagesHistoryCriteria>(i => i.StartDate.Date == threeDayAgo.Date));
         }
 
         [Test]
@@ -107,7 +105,7 @@
             announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>()).Returns(lastSeenAnnouncement);
 
             //// Act
-            messageService.GetMessagesHistory(
+            messageService.GetPublicMessagesHistory(
                 new MessageHistoryParams(
                     CustId.ValidId,
                     0,
@@ -117,11 +115,10 @@
                     DateTime.MinValue,
                     DateTime.Now,
                     DateTime.MinValue,
-                    false,
                     personalType));
 
             //// Assert
-            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetMessagesHistoryCriteria>(i => i.StartDate.Date == newReleaseDate.Date));
+            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetPublicMessagesHistoryCriteria>(i => i.StartDate.Date == newReleaseDate.Date));
         }
 
         [Test]
@@ -135,7 +132,7 @@
             announcementService.GetLastSeenAnnouncement(Arg.Any<int>(), Arg.Any<int>()).Returns(lastSeenAnnouncement);
 
             //// Act
-            messageService.GetMessagesHistory(
+            messageService.GetPublicMessagesHistory(
                 new MessageHistoryParams(
                     CustId.ValidId,
                     0,
@@ -145,11 +142,10 @@
                     DateTime.MinValue,
                     DateTime.Now,
                     DateTime.MinValue,
-                    false,
                     personalType));
 
             //// Assert
-            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetMessagesHistoryCriteria>(i => i.StartDate.Date == sixMonthAgo.Date));
+            dynamicRepository.Received().Fetch<MessageHistory>(Arg.Is<GetPublicMessagesHistoryCriteria>(i => i.StartDate.Date == sixMonthAgo.Date));
         }
     }
 }

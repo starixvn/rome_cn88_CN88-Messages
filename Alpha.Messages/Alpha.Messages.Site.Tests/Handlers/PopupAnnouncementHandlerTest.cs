@@ -36,7 +36,7 @@
         {
             //// Arrange
             var announcement = fixture.Create<AlphaAnnouncement>();
-            var query = new PopupAnnouncementQuery(userSessionFixture.UserSession);
+            var query = new PopupAnnouncementQuery(userSessionFixture.UserSession, false);
             announcementService.GetPopUpAnnouncements(Arg.Any<PopupAnnouncementParams>())
                 .Returns(announcement);
 
@@ -53,7 +53,7 @@
         {
             //// Arrange
             var announcement = fixture.Create<AlphaAnnouncement>();
-            var query = new PopupAnnouncementQuery(userSessionFixture.UserSession);            
+            var query = new PopupAnnouncementQuery(userSessionFixture.UserSession, false);            
             announcementService.GetPopUpAnnouncements(Arg.Any<PopupAnnouncementParams>())
                 .Returns(announcement);
             formatService.Format(Arg.Any<AlphaAnnouncement>(), Arg.Any<PopupAnnouncementParams>()).Returns(announcement);

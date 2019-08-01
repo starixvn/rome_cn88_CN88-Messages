@@ -59,6 +59,7 @@
                 .Received()
                 .GetPortalMessages(
                     Arg.Is<int>(cud => cud == query.CustId),
+                    Arg.Is<int>(sud => sud == query.SubAccId),
                     Arg.Is<string>(ps => ps == query.ParentSites),
                     Arg.Is<int>(tm => tm == query.TotalMessage),
                     Arg.Is<bool>(it => it == query.IsTest));
@@ -93,6 +94,7 @@
         private void FakeReturnGetMessagesService(List<PortalMessage> messages)
         {
             messageService.GetPortalMessages(
+                        Arg.Any<int>(),
                         Arg.Any<int>(),
                         Arg.Any<string>(),
                         Arg.Any<int>(),

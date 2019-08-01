@@ -14,6 +14,7 @@
         {
             Level = userSession.RoleId;
             CustId = userSession.CustId;
+            SubAccId = userSession.SubAccId;
             CurrentLang = userSession.Language;
             TotalMessage = totalMessage;
             IsTest = isTest;
@@ -22,6 +23,8 @@
         public byte Level { get; }
 
         public int CustId { get; }
+
+        public int SubAccId { get; }
 
         public int TotalMessage { get; }
 

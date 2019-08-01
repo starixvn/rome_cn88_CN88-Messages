@@ -9,9 +9,11 @@
     {
         IEnumerable<PortalMessage> GetPortalMessages(
             int custId,
+            int subAccId,
             string parentSites,
             int totalMessage,
             bool isTest);
+
         bool MarkMessageAsRead(int custId, int messageId, bool isInternal);
     }
 
@@ -27,11 +29,12 @@
 
         public IEnumerable<PortalMessage> GetPortalMessages(
             int custId,
+            int subAccId,
             string parentSites,
             int totalMessage,
             bool isTest)
         {
-            var criteria = new GetPortalMessagesCriteria(custId, parentSites, totalMessage, isTest);
+            var criteria = new GetPortalMessagesCriteria(custId, subAccId, parentSites, totalMessage, isTest);
 
             var message = dynamicRepository.Fetch<PortalMessage>(criteria);            
 

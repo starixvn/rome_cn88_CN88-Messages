@@ -30,6 +30,7 @@
             // Act
             var noticeMessages = service.GetPortalMessages(
                 CustId.InvalidId,
+                2,
                 string.Empty,
                 10,
                 false);
@@ -47,7 +48,7 @@
             dynamicRepository.Fetch<PortalMessage>(Arg.Any<ICriteria>()).Returns(expectedNoticeMessages);
 
             // Act
-            var noticeMessages = service.GetPortalMessages(CustId.ValidId, "1", 10, false);
+            var noticeMessages = service.GetPortalMessages(CustId.ValidId, 2, "1", 10, false);
 
             // Assert
             Assert.AreEqual(noticeMessages, expectedNoticeMessages);

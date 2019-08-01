@@ -2,8 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using Alpha.Messages.Models.Announcement;
-    using Helpers;
+    using CN88.Web.Helpers;
+    using Models.Announcement;
     using Models.Message;
 
     public class AnnouncementHistoryViewModel : MessageBase
@@ -32,6 +32,6 @@
 
         public DateTime CurrentDate => DateTime.Now;
 
-        public bool IsDevice => browserHelper.IsMobile() && !browserHelper.IsTablet();
+        public bool IsDevice => browserHelper.IsMobile();
     }
 }

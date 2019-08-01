@@ -1,23 +1,13 @@
 ﻿namespace Alpha.Messages.Criteria.Message
 {
-    using System;
-    using System.Collections.Generic;
     using Constants;
     using Fanex.Data;
     using Fanex.Data.Repository;
+    using System;
 
-    public class GetMessagesHistoryCriteria : CriteriaBase
+    public abstract class GetMessagesHistoryCriteriaBase : CriteriaBase
     {
-        private static readonly Dictionary<int, string> SettingKeys = new Dictionary<int, string>
-        {
-            [MessageType.Personal] = "Dot_Msg_GetPrivateMessage",
-            [MessageType.Normal] = "Dot_Msg_GetPublicMessage",
-            [MessageType.Special] = "Dot_Msg_GetSpecialMessage"
-        };
-
-        private readonly string settingKey;
-
-        public GetMessagesHistoryCriteria(
+        protected GetMessagesHistoryCriteriaBase(
             int custId,
             string parentSites,
             int specialType,
@@ -26,7 +16,6 @@
             bool isTest,
             int messageType)
         {
-            settingKey = SettingKeys[messageType];
             CustId = custId;
             ParentSites = parentSites;
             Special = specialType;
@@ -54,9 +43,5 @@
         public DateTime EndDate { get; }
 
         public bool IsTest { get; }
-
-        public override string GetSettingKey() => settingKey;
-
-        public override bool IsValid() => CustId > 0 && !string.IsNullOrEmpty(ParentSites);
     }
 }

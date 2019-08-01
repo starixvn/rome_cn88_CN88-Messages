@@ -8,7 +8,7 @@
     @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
     @StaticResources.RenderStyles("~/assets/bundles/popup")
 </head>
-<body @(Html.Raw(Alpha.Messages.Site.Helpers.BrowserManager.BuildMobileHtmlClass()))>
+<body @(Html.Raw(CN88.Web.Helpers.BrowserManager.BuildMobileHtmlClass()))>
     @if (Model != null)
     {
         <div id="popupContent" data-messageId="@Model.Id">

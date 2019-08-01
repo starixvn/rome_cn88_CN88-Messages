@@ -160,7 +160,7 @@
                 MessageType.Normal,
                 DateTime.Today,
                 DateTime.Today,
-                isTest);
+                false);
 
             // Assert
             Assert.AreEqual(isTest, query.IsTest);

@@ -7,9 +7,9 @@
     using Announcements.Models;
     using Announcements.Services;
     using Client;
+    using CN88.Web.Helpers;
     using Controllers;
     using Fanex.Data.Repository;
-    using Helpers;
     using MediatR;
     using Models.Announcement;
     using Requests.Announcement;
@@ -89,7 +89,6 @@
                     UserPermission.HasPermissionOnProduct),
                 Lifestyle.Singleton);
             container.RegisterSingleton<ResourceManager, SiteResourceManager>();
-
         }
 
         private static void RegisterAnnouncementService(Container container)

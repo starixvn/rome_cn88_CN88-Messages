@@ -55,7 +55,7 @@
                 MessageType.Normal,
                 startDate,
                 endDate,
-                AppSettings.LocalTest);
+                false);
             query.Specification = specificationParam;
 
             // Act

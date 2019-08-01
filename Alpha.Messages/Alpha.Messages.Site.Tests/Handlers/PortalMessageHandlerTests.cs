@@ -53,6 +53,7 @@ namespace Alpha.Messages.Site.Tests.Handlers
                 .Received()
                 .GetPortalMessages(
                     Arg.Is<int>(cid => cid == query.CustId),
+                    Arg.Is<int>(sid => sid == query.SubAccId),
                     Arg.Is<string>(pid => pid == query.ParentSites),
                     Arg.Is<int>(tm => tm == query.TotalMessage),
                     Arg.Is<bool>(it => it == query.IsTest));
@@ -179,6 +180,7 @@ namespace Alpha.Messages.Site.Tests.Handlers
         private void FakeReturnGetNoticeMessagesService(List<PortalMessage> noticeMessages)
         {
             noticeService.GetPortalMessages(
+                      Arg.Any<int>(),
                       Arg.Any<int>(),
                       Arg.Any<string>(),
                       Arg.Any<int>(),

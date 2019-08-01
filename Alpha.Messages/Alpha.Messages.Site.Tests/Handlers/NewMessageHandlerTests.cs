@@ -32,7 +32,7 @@
         public void Handle_Alway_CallServices()
         {
             //// Arrange
-            var query = new NumberOfNewMessageQuery(fixture.UserSession);
+            var query = new NumberOfNewMessageQuery(fixture.UserSession, false);
             var unreadMessage = fixtureData.Create<NumberOfUnreadMessage>();
             messageService.CheckNewUnreadMessage(Arg.Any<NumberOfNewMessageParams>()).Returns(unreadMessage);
             
@@ -50,7 +50,7 @@
         {
             //// Arrange
             var announcements = new List<AlphaAnnouncement>();
-            var query = new NumberOfNewMessageQuery(fixture.UserSession);
+            var query = new NumberOfNewMessageQuery(fixture.UserSession, false);
             var unreadMessage = fixtureData.Create<NumberOfUnreadMessage>();
             messageService.CheckNewUnreadMessage(Arg.Any<NumberOfNewMessageParams>()).Returns(unreadMessage);
 

@@ -5,22 +5,25 @@
 
     public class GetNumberOfUnreadMessageCriteria : CriteriaBase
     {
-        public GetNumberOfUnreadMessageCriteria(int custId, int subAccId, string parentSites)
+        public GetNumberOfUnreadMessageCriteria(int custId, int subAccId, string parentSites, bool isTest)
         {
             CustId = custId;
             SubAccId = subAccId;
             ParentSites = parentSites;
+            IsTest = isTest;
         }
 
         public int CustId { get; }
 
         public int SubAccId { get; }
 
-        [SpParam(SqlParamName = "targetId2")]
+        public bool IsTest { get; }
+
+        [SpParam(SqlParamName = "targetId")]
         public string ParentSites { get; }
 
-        public override string GetSettingKey() => "Age_MsgCustReadStatus_SelUnread";
+        public override string GetSettingKey() => "CS_MsgCustReadStatus_SelUnread";
 
-        public override bool IsValid() => CustId >= 0;
+        public override bool IsValid() => CustId > 0 && SubAccId >= 0;
     }
 }

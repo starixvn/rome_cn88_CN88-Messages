@@ -8,7 +8,7 @@
 
     public class NumberOfNewMessageQuery : MessageHistoryBaseRequest, IRequest<NumberOfUnreadMessage>
     {
-        public NumberOfNewMessageQuery(IUserSession userSession) : base(userSession)
+        public NumberOfNewMessageQuery(IUserSession userSession, bool isTest) : base(userSession, isTest)
         {
         }
 

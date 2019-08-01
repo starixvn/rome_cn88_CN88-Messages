@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using Helpers;
+    using CN88.Web.Helpers;
     using Models.Message;
 
     public class MessagesHistoryViewModel : MessageBase
@@ -34,6 +34,6 @@
 
         public bool IsNewMessage(DateTime postTime) => postTime > LastSeenAnnouncement;
 
-        public bool IsDevice => browserHelper.IsMobile() && !browserHelper.IsTablet();
+        public bool IsDevice => browserHelper.IsMobile();
     }
 }

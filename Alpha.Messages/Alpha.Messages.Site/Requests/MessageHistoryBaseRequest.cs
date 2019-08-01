@@ -3,15 +3,18 @@
     using Alpha.Announcements.Models;
     using Alpha.Messages.Constants;
     using Params.Announcement;
+    using Sunplus.Agent.Model.Base;
     using Sunplus.Agent.Model.Entities;
+    using Sunplus.Agent.Model.BL.Definitions;
 
     public class MessageHistoryBaseRequest
     {
         protected readonly IUserSession userSession;
 
-        public MessageHistoryBaseRequest(IUserSession userSession)
+        public MessageHistoryBaseRequest(IUserSession userSession, bool isTest)
         {
-            this.userSession = userSession;
+            this.userSession = userSession ?? new UserSessionExt();
+            IsTest = isTest;
         }
 
         public IParam Specification { get; set; }
@@ -36,6 +39,8 @@
 
         public string Site => userSession.Site;
 
+        public bool IsTest { get; set; }
+
         virtual public BaseAnnouncementsParams ConvertToParameters()
             => new BaseAnnouncementsParams
             {
@@ -47,7 +52,8 @@
                 SubAccId = SubAccId,
                 UserName = UserName,
                 SpecificationParamter = Specification,
-                ParentSites = ParentSites
+                ParentSites = ParentSites,
+                IsTest = IsTest
             };
     }
 }
