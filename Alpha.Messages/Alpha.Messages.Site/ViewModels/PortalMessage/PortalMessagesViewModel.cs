@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using CN88.Web.Helpers;
     using Constants;
-    using Web.Helpers;
 
     public class PortalMessagesViewModel
     {

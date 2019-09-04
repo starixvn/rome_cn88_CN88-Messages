@@ -1,42 +1,43 @@
 ﻿namespace Alpha.Messages.Site.Tests.Handlers
 {
     using System.Collections.Generic;
-    using Alpha.Messages.Models.Announcement;
-    using Alpha.Messages.Params.Announcement;
-    using Alpha.Messages.Services;
-    using Alpha.Messages.Site.Handlers;
-    using Alpha.Messages.Site.Tests.Fixtures;
+    using Fixtures;
     using Messages.Constants;
+    using Models.Announcement;
     using NSubstitute;
     using NUnit.Framework;
+    using Params.Announcement;
+    using Ploeh.AutoFixture;
+    using Services;
+    using Site.Handlers;
     using Site.Requests.Announcement;
     using Site.ViewModels;
 
     public class AnnouncementHandlerTest
     {
         private AnnouncementService announcementService;
-        private AnnouncementFormatService formatService;
         private NewMessageService messageService;
         private AnnouncementHandler handler;
-        private UserSessionFixture fixture;
+        private UserSessionFixture userSessionFixture;
+        private Fixture fixture;
+
         [SetUp]
         public void SetUp()
         {
             announcementService = Substitute.For<AnnouncementService>();
             messageService = Substitute.For<NewMessageService>();
-            formatService = Substitute.For<AnnouncementFormatService>();
-            handler = new AnnouncementHandler(announcementService, formatService, messageService, null);
-            fixture = new UserSessionFixture();
-            fixture.UserSession.RoleId.Returns(RoleId.Agent);
+            handler = new AnnouncementHandler(announcementService, messageService, null);
+            userSessionFixture = new UserSessionFixture();
+            userSessionFixture.UserSession.RoleId.Returns(RoleId.Agent);
+            fixture = new Fixture();
         }
 
         [Test]
-        public void Handle_Alway_CallServices()
+        public void HandleAnnouncementsHistoryQuery_Alway_CallServices()
         {
             //// Arrange
             var announcements = new List<AlphaAnnouncement>();
-            var query = new AnnouncementsHistoryQuery(fixture.UserSession, false);
-
+            var query = new AnnouncementsHistoryQuery(userSessionFixture.UserSession, false);
 
             //// Act
             handler.Handle(query);
@@ -44,22 +45,52 @@
             //// Assert
             messageService.Received().GetNumberOfUnreadMessage(Arg.Any<BaseAnnouncementsParams>());
             announcementService.Received().GetAnnouncementsHistory(Arg.Any<AnnouncementsHistoryParams>());
-            formatService.Received().Format(Arg.Any<IEnumerable<AlphaAnnouncement>>(), Arg.Any<BaseAnnouncementsParams>());
         }
 
         [Test]
-        public void Handle_Always_ReturnCorrectViewModel()
+        public void HandleAnnouncementsHistoryQuery_Always_ReturnCorrectViewModel()
         {
             //// Arrange
             var announcements = new List<AlphaAnnouncement>();
-            var query = new AnnouncementsHistoryQuery(fixture.UserSession, false);
-
+            var query = new AnnouncementsHistoryQuery(userSessionFixture.UserSession, false);
 
             //// Act
             var act = handler.Handle(query);
 
             //// Assert
             Assert.IsInstanceOf(typeof(AnnouncementHistoryViewModel), act);
+        }
+
+        [Test]
+        public void HandlePopupAnnouncementQuery_Alway_CallServices()
+        {
+            //// Arrange
+            var announcement = fixture.Create<AlphaAnnouncement>();
+            var query = new PopupAnnouncementQuery(userSessionFixture.UserSession, false);
+            announcementService.GetPopUpAnnouncements(Arg.Any<PopupAnnouncementParams>())
+                .Returns(announcement);
+
+            //// Act
+            handler.Handle(query);
+
+            //// Assert
+            announcementService.Received().GetPopUpAnnouncements(Arg.Any<PopupAnnouncementParams>());
+        }
+
+        [Test]
+        public void HandlePopupAnnouncementQuery_Always_ReturnCorrectViewModel()
+        {
+            //// Arrange
+            var announcement = fixture.Create<AlphaAnnouncement>();
+            var query = new PopupAnnouncementQuery(userSessionFixture.UserSession, false);
+            announcementService.GetPopUpAnnouncements(Arg.Any<PopupAnnouncementParams>())
+                .Returns(announcement);
+
+            //// Act
+            var act = handler.Handle(query);
+
+            //// Assert
+            Assert.IsInstanceOf(typeof(AlphaAnnouncement), act);
         }
     }
 }

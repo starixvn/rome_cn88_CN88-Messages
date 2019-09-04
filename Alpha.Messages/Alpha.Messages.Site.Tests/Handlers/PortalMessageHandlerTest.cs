@@ -36,8 +36,7 @@
             userSession.RoleId.Returns(RoleId.Agent);
             userSession.GetProperty<DateTime>(SessionKey.CustomerDatelimit).Returns(DateTime.MinValue);
             fixture = new Fixture();
-        }        
-        
+        }
 
         [Test]
         public void Handle_NotNullQuery_CallGetPortalMessages()
@@ -70,7 +69,6 @@
         {
             // Arrange
             var compareLogic = new CompareLogic();
-            UrlHelperTestSetUp.SetUp();
 
             var messages = FakeDataHelper.CreateMany<PortalMessage>().ToList();
             FakeReturnGetMessagesService(messages);

@@ -88,7 +88,6 @@
         {
             // Arrange
             var compareLogic = new CompareLogic();
-            UrlHelperTestSetUp.SetUp();
             var now = DateTime.Now;
 
             var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();
@@ -160,7 +159,6 @@
         {
             // Arrange
             var compareLogic = new CompareLogic();
-            UrlHelperTestSetUp.SetUp();
             var now = DateTime.Now;
 
             var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();
@@ -232,7 +230,6 @@
         {
             // Arrange
             var compareLogic = new CompareLogic();
-            UrlHelperTestSetUp.SetUp();
             var now = DateTime.Now;
 
             var messages = FakeDataHelper.CreateMany<MessageHistory>().ToList();

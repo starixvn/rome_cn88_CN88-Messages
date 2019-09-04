@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using Announcements.Models;
     using Announcements.Specs;
-    using AlphaAppSettings = Web.Configurations.AppSettings;
 
     public class AlphaAnnouncement
     {
@@ -16,8 +15,8 @@
 
         public AlphaAnnouncement(
             int id,
-            string content, 
-            string code, 
+            string content,
+            string code,
             DateTime releasedDate,
             DateTime lastSeenDate,
             IEnumerable<ISpecification<IParam>> specifications)
@@ -34,7 +33,7 @@
 
         public string Content { get; set; }
 
-        public string Code { get; }        
+        public string Code { get; }
 
         public DateTime ReleasedDate { get; }
 
