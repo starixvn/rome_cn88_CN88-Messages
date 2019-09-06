@@ -154,10 +154,10 @@
     <value>优胜冠军</value>
   </data>
   <data name="BetSettingFollows" xml:space="preserve">
-    <value> 投注设定参照</value>
+    <value>投注设定设定参照</value>
   </data>
   <data name="CommissionSettingFollows" xml:space="preserve">
-    <value>退水设定参照</value>
+    <value>佣金设定参照</value>
   </data>
   <data name="PositionTakingSettingFollows" xml:space="preserve">
     <value>占成数设定复制跟随</value>
