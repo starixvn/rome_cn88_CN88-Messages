@@ -80,7 +80,6 @@
             container.RegisterPerWebRequest<MessageHistoryService, MessageHistoryServiceImpl>();
             container.RegisterPerWebRequest<MarqueeMessageService, MarqueeMessageServiceImpl>();
             container.RegisterPerWebRequest<PortalMessageService, PortalMessageServiceImpl>();
-            container.RegisterSingleton<AnnouncementFormatService, AnnouncementFormatServiceImpl>();
             container.RegisterSingleton<AnnouncementService, AnnouncementServiceImpl>();
 
             container.Register<ProductService>(

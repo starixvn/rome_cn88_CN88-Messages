@@ -43,12 +43,12 @@
       <HintPath>..\..\packages\Alpha.SubAccount.1.0.0\lib\net40\Alpha.SubAccount.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Alpha.Web, Version=1.0.1.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Alpha.Web.1.0.1.9\lib\net461\Alpha.Web.dll</HintPath>
+    <Reference Include="CN88.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CN88.Common.1.0.0\lib\net461\CN88.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CN88.Web, Version=1.0.1.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CN88.Web.1.0.1.5\lib\net461\CN88.Web.dll</HintPath>
+    <Reference Include="CN88.Web, Version=1.0.1.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CN88.Web.1.0.1.6\lib\net461\CN88.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
@@ -73,6 +73,14 @@
     </Reference>
     <Reference Include="Fanex.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Fanex.Logging.2.0.0\lib\net461\Fanex.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Logging.Extensions, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Fanex.Logging.Extensions.1.0.6\lib\net461\Fanex.Logging.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fanex.Logging.Extensions.Web, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Fanex.Logging.Extensions.Web.1.0.7\lib\net461\Fanex.Logging.Extensions.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Fanex.Products, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
@@ -232,7 +240,6 @@
     <Compile Include="Controllers\AnnouncementControllerTest.cs" />
     <Compile Include="Controllers\PortalMessageControllerTests.cs" />
     <Compile Include="Fixtures\UserSessionFixture.cs" />
-    <Compile Include="Handlers\PopupAnnouncementHandlerTest.cs" />
     <Compile Include="Handlers\NewMessageHandlerTests.cs" />
     <Compile Include="Handlers\AnnouncementHandlerTest.cs" />
     <Compile Include="Handlers\MessageHistoryHandlerTest.cs" />
@@ -242,7 +249,6 @@
     <Compile Include="Helpers\ParametersAmountConstructorQuery.cs" />
     <Compile Include="Helpers\FakeDataHelper.cs" />
     <Compile Include="Helpers\QueryEntityModelBinderTests.cs" />
-    <Compile Include="Helpers\UrlHelperTestSetUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\MessageHistory\MessageHistoryQueryTests.cs" />
     <Compile Include="Requests\MarqueeMessage\MarqueeMessageQueryTests.cs" />
