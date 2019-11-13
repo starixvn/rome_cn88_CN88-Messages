@@ -4,7 +4,9 @@
 
     public class GetMoveBetInformationCriteria : CriteriaBase
     {
-        public int TimeZone { get; } = 8;
+        private const int GTMTimeZone = 8;
+
+        public int TimeZone { get; } = GTMTimeZone;
 
         public override string GetSettingKey() => "Age_MoveBetsProcessNotification";
 
