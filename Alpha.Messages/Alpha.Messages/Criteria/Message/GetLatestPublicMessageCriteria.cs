@@ -38,11 +38,13 @@
         {
             get
             {
+                const int Site3Index = 2;
                 var site3 = string.Empty;
+
                 if (!string.IsNullOrEmpty(Site))
                 {
                     var sites = Site.Split(',');
-                    site3 = sites.Length > 2 ? sites[2] : string.Empty;
+                    site3 = sites.Length > Site3Index ? sites[Site3Index] : string.Empty;
                 }
 
                 return site3;

@@ -118,7 +118,10 @@
         public string GetContentByKey(string languageKey)
             => Contents.ContainsKey(languageKey) && !string.IsNullOrEmpty(Contents[languageKey])
             ? Contents[languageKey]
-            : Contents.ContainsKey(Language.English)
+            : GetContentByDefaultLanguage();
+
+        private string GetContentByDefaultLanguage()
+            => Contents.ContainsKey(Language.English)
             ? Contents[Language.English]
             : string.Empty;
     }
