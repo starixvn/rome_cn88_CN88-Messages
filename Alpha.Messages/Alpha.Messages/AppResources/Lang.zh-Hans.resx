@@ -154,10 +154,10 @@
     <value>优胜冠军</value>
   </data>
   <data name="BetSettingFollows" xml:space="preserve">
-    <value>投注设定设定参照</value>
+    <value>投注设定复制跟随</value>
   </data>
   <data name="CommissionSettingFollows" xml:space="preserve">
-    <value>佣金设定参照</value>
+    <value>佣金设定复制跟随</value>
   </data>
   <data name="PositionTakingSettingFollows" xml:space="preserve">
     <value>占成数设定复制跟随</value>
@@ -173,5 +173,8 @@
   </data>
   <data name="SportType" xml:space="preserve">
     <value>球类</value>
+  </data>
+  <data name="NewBetTypeOfBadmintonTitle" xml:space="preserve">
+    <value>羽毛球的新投注类别:</value>
   </data>
 </root>
