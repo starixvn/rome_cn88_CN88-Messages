@@ -174,4 +174,7 @@
   <data name="SportType" xml:space="preserve">
     <value>Sport</value>
   </data>
+  <data name="NewBetTypeOfBadmintonTitle" xml:space="preserve">
+    <value>New bet types of Badminton:</value>
+  </data>
 </root>

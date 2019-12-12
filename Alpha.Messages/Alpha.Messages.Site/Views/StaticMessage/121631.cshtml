@@ -1,0 +1,78 @@
+﻿@using Alpha.Messages.Services
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>New Announcement</title>
+    @StaticResources.AssetStyles.RenderCommon("/bundles/common/common")
+    @StaticResources.AssetStyles.Render("/bundles/site-features/default")
+    @StaticResources.RenderStyles("~/assets/bundles/extendMessage")
+</head>
+<body>
+    <div class="report-detail wager-report">
+        <div class="baio-title-effect-date-format">@Lang.NewBetTypeOfBadmintonTitle</div>
+        <table class="tbl-noborder tbl-report settlement-report">
+            <thead class="tableFloatingHeaderOriginal">
+                <tr>
+                    <th>@Lang.NewBetType</th>
+                    <th>@Lang.CommissionSettingFollows</th>
+                    <th>@Lang.BetSettingFollows</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("707")</td>
+                    <td class="center borderleft" rowspan="4">@Lang.Label1x2</td>
+                    <td class="center borderleft" rowspan="4">@Lang.Label1x2</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("712")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("713")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("714")</td>
+                </tr>
+
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("701")</td>
+                    <td class="center borderleft" rowspan="8">@Lang.LabelHandicapFC, @Lang.LabelOverUnder, @Lang.LabelOddEven</td>
+                    <td class="center borderleft" rowspan="8">@Lang.LabelHandicapFC, @Lang.LabelOverUnder, @Lang.LabelOddEven</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("702")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("704")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("705")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("706")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("708")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("709")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("710")</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("703")</td>
+                    <td class="center borderleft" rowspan="2">@Lang.LabelOtherTypes</td>
+                    <td class="center borderleft" rowspan="2">@Lang.LabelOtherTypes</td>
+                </tr>
+                <tr>
+                    <td>@AlphaRemotingRefService.GetBetTypeName("711")</td>
+                </tr>              
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

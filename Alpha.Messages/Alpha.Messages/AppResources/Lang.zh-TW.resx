@@ -174,4 +174,7 @@
   <data name="SportType" xml:space="preserve">
     <value>運動</value>
   </data>
+  <data name="NewBetTypeOfBadmintonTitle" xml:space="preserve">
+    <value>羽毛球新投註類型：</value>
+  </data>
 </root>
