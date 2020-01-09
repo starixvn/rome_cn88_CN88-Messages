@@ -160,6 +160,15 @@ namespace Alpha.Messages.AppResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sportsbook.
+        /// </summary>
+        public static string LabelSportsbook {
+            get {
+                return ResourceManager.GetString("LabelSportsbook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Moneyline.
         /// </summary>
         public static string moneyline {
