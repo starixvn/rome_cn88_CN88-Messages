@@ -177,4 +177,7 @@
   <data name="NewBetTypeOfBadmintonTitle" xml:space="preserve">
     <value>New bet types of Badminton:</value>
   </data>
+  <data name="LabelSportsbook" xml:space="preserve">
+    <value>Sportsbook</value>
+  </data>
 </root>
