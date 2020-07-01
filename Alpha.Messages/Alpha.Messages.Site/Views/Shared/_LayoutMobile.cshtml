@@ -23,5 +23,6 @@
     @StaticResources.AssetScripts.Render("/bundles/site-messages/message-default")
     @RenderSection("Scripts", required: false)
     @Html.Raw(Fanex.Logging.LogManager.RenderJavascriptLogger())
+    @CN88.Web.Helpers.GoogleAnalyticHepler.Render()
 </body>
 </html>
